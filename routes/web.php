@@ -31,6 +31,9 @@ Route::group([ 'namespace' => 'Sites'], function()
     Route::get('/size-char', 'HomeController@sizeChar')->name('sites.size-char');
     Route::get('/my-account', 'HomeController@myAccount')->name('sites.my-account');
     Route::get('/cart', 'HomeController@cart')->name('sites.cart');
+
+    Route::get('/logout', 'UserController@logout');
+    Route::post('/login', 'UserController@login')->name('siteslogin');
 });
 Route::group([ 'namespace' => 'Admin', 'prefix' => 'admin'], function()
 {

@@ -31,7 +31,7 @@
                                                 <a href="https://goatstee.com/my-account/edit-account/">Account Details</a>
                                             </li>
                                             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-                                                <a href="https://goatstee.com/my-account/customer-logout/">Logout</a>
+                                                <a href="/logout">Logout</a>
                                             </li>
                                         </ul>
                                     </nav>
@@ -67,13 +67,18 @@
                             <div class="entry-content" itemprop="text">
                                 <div class="woocommerce">
 
+                                    @include('sites.components.error')
+
                                     <div class="u-columns col2-set" id="customer_login">
                                         <div class="u-column1 col-1">
                                             <h2>Login</h2>
-                                            <form method="post" class="login">
+                                            {!! Form::open([
+                                                'url' => '/login',
+                                                'method' => 'POST',
+                                            ]) !!}
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="username">Username or email address <span class="required">*</span></label>
-                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" value="" />
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" value="" />
                                                 </p>
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="password">Password <span class="required">*</span></label>
@@ -92,6 +97,7 @@
                                         <div class="u-column2 col-2">
                                             <h2>Register</h2>
                                             {!! Form::open([
+                                                'url' => '/register',
                                                 'method' => 'POST'
                                             ]) !!}
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
