@@ -8,6 +8,9 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
     <link rel="stylesheet" href="/css/all.css">
+    <!-- Datatable -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -248,6 +251,10 @@
 <!-- ./wrapper -->
 
 <script src="/js/app.js" type="text/javascript"></script>
+<!-- Datatable -->
+<script src="/plugins/datatables/dataTables.bootstrap.js"></script>
+<script src="/plugins/datatables/jquery.dataTables.js"></script>
+
 @yield('script')
 </body>
 </html>
