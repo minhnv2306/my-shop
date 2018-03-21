@@ -13,7 +13,7 @@
                                     <nav class="woocommerce-MyAccount-navigation">
                                         <ul>
                                             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-                                                <a href="https://goatstee.com/my-account/">Dashboard</a>
+                                                <a href="{{route('sites.my-account')}}">Dashboard</a>
                                             </li>
                                             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
                                                 <a href="https://goatstee.com/my-account/orders/">Orders</a>
@@ -22,7 +22,7 @@
                                                 <a href="https://goatstee.com/my-account/downloads/">Downloads</a>
                                             </li>
                                             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-                                                <a href="https://goatstee.com/my-account/edit-address/">Addresses</a>
+                                                <a href="{{route('user.address')}}">Addresses</a>
                                             </li>
                                             <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--payment-methods">
                                                 <a href="https://goatstee.com/my-account/payment-methods/">Payment Methods</a>
@@ -39,7 +39,7 @@
 
                                     <div class="woocommerce-MyAccount-content">
                                         <p>
-                                            Hello <strong>minh1101</strong> (not minh1101? <a href="https://goatstee.com/my-account/customer-logout/">Sign out</a>)</p>
+                                            Hello <strong>{{convertEmailToUsername(\Illuminate\Support\Facades\Auth::user()->email)}}</strong> (<a href="/logout">Sign out</a>)</p>
                                         <p>
                                             From your account dashboard you can view your <a href="https://goatstee.com/my-account/orders/">recent orders</a>, manage your <a href="https://goatstee.com/my-account/edit-address/">shipping and billing addresses</a> and <a href="https://goatstee.com/my-account/edit-account/">edit your password and account details</a>.</p>
                                     </div>
@@ -73,16 +73,16 @@
                                         <div class="u-column1 col-1">
                                             <h2>Login</h2>
                                             {!! Form::open([
-                                                'url' => '/login',
+                                                'route' => 'sites.login',
                                                 'method' => 'POST',
                                             ]) !!}
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="username">Username or email address <span class="required">*</span></label>
-                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" value="" />
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" value="" required/>
                                                 </p>
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="password">Password <span class="required">*</span></label>
-                                                    <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" />
+                                                    <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" required minlength="6"/>
                                                 </p>
                                                 <p class="form-row">
                                                     <button class="woocommerce-Button button" name="login">Login</button>
@@ -106,7 +106,7 @@
                                                 </p>
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="reg_password">Password <span class="required">*</span></label>
-                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
+                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" minlength="6"/>
                                                 </p>
                                                 <!-- Spam Trap -->
                                                 <p class="woocomerce-FormRow form-row">

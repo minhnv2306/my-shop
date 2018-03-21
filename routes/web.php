@@ -33,7 +33,12 @@ Route::group([ 'namespace' => 'Sites'], function()
     Route::get('/cart', 'HomeController@cart')->name('sites.cart');
 
     Route::get('/logout', 'UserController@logout');
-    Route::post('/login', 'UserController@login')->name('siteslogin');
+    Route::post('/loginSite', 'UserController@login')->name('sites.login');
+
+    Route::group([ 'prefix' => 'users'], function() {
+        Route::get('/address', 'UserController@address')->name('user.address');
+        Route::get('/edit-billing-address', 'UserController@showBillingAddress')->name('user.show-billing-address');
+    });
 });
 Route::group([ 'namespace' => 'Admin', 'prefix' => 'admin'], function()
 {
