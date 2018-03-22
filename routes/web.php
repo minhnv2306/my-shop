@@ -37,7 +37,13 @@ Route::group([ 'namespace' => 'Sites'], function()
 
     Route::group([ 'prefix' => 'users'], function() {
         Route::get('/address', 'UserController@address')->name('user.address');
-        Route::get('/edit-billing-address', 'UserController@showBillingAddress')->name('user.show-billing-address');
+        Route::get('/create-billing-address', 'UserController@showBillingAddress')->name('user.show-billing-address');
+        Route::get('/edit-billing-address', 'UserController@editBillingAddress')->name('user.edit-billing-address');
+        Route::post('/save-billing-address', 'UserController@saveBillingAddress')->name('user.save-billing-address');
+
+        Route::get('/create-shipping-address', 'UserController@showShippingAddress')->name('user.show-shipping-address');
+        Route::get('/edit-shipping-address', 'UserController@editShippingAddress')->name('user.edit-shipping-address');
+        Route::post('/save-shpping-address', 'UserController@saveShippingAddress')->name('user.save-shipping-address');
     });
 });
 Route::group([ 'namespace' => 'Admin', 'prefix' => 'admin'], function()

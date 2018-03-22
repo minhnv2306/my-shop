@@ -9,6 +9,7 @@
     <meta name="google-site-verification" content="qY0zYEE7M5CSLC5qQka72up1VYMDTooYURCdOg9J3S4"/>
 
     <script type="text/javascript">document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>@yield('title') - Goatstee</title>
     <style>
         .wishlist_table .add_to_cart, a.add_to_wishlist.button.alt {

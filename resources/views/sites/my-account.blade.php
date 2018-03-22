@@ -10,36 +10,11 @@
                             <h1 class="page-title" itemprop="headline">My Account</h1>
                             <div class="entry-content" itemprop="text">
                                 <div class="woocommerce">
-                                    <nav class="woocommerce-MyAccount-navigation">
-                                        <ul>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-                                                <a href="{{route('sites.my-account')}}">Dashboard</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-                                                <a href="https://goatstee.com/my-account/orders/">Orders</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-                                                <a href="https://goatstee.com/my-account/downloads/">Downloads</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-                                                <a href="{{route('user.address')}}">Addresses</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--payment-methods">
-                                                <a href="https://goatstee.com/my-account/payment-methods/">Payment Methods</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-                                                <a href="https://goatstee.com/my-account/edit-account/">Account Details</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-                                                <a href="/logout">Logout</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-
-
+                                    @include('sites.components.address_header')
                                     <div class="woocommerce-MyAccount-content">
                                         <p>
-                                            Hello <strong>{{convertEmailToUsername(\Illuminate\Support\Facades\Auth::user()->email)}}</strong> (<a href="/logout">Sign out</a>)</p>
+                                            Hello <strong>{{convertEmailToUsername(\Illuminate\Support\Facades\Auth::user()->email)}}</strong>
+                                            (not {{convertEmailToUsername(\Illuminate\Support\Facades\Auth::user()->email)}} <a href="/logout">Sign out</a>)</p>
                                         <p>
                                             From your account dashboard you can view your <a href="https://goatstee.com/my-account/orders/">recent orders</a>, manage your <a href="https://goatstee.com/my-account/edit-address/">shipping and billing addresses</a> and <a href="https://goatstee.com/my-account/edit-account/">edit your password and account details</a>.</p>
                                     </div>

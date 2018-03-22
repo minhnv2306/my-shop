@@ -15,32 +15,7 @@
                         <h1 class="page-title" itemprop="headline">Addresses</h1>
                         <div class="entry-content" itemprop="text">
                             <div class="woocommerce">
-                                <nav class="woocommerce-MyAccount-navigation">
-                                    <ul>
-                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard">
-                                            <a href="{{route('sites.my-account')}}">Dashboard</a>
-                                        </li>
-                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-                                            <a href="https://goatstee.com/my-account/orders/">Orders</a>
-                                        </li>
-                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-                                            <a href="https://goatstee.com/my-account/downloads/">Downloads</a>
-                                        </li>
-                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address is-active">
-                                            <a href="{{route('user.address')}}">Addresses</a>
-                                        </li>
-                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--payment-methods">
-                                            <a href="https://goatstee.com/my-account/payment-methods/">Payment Methods</a>
-                                        </li>
-                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-                                            <a href="https://goatstee.com/my-account/edit-account/">Account Details</a>
-                                        </li>
-                                        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-                                            <a href="https://goatstee.com/my-account/customer-logout/">Logout</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-
+                                @include('sites.components.address_header')
 
                                 <div class="woocommerce-MyAccount-content">
 
@@ -53,20 +28,64 @@
                                         <div class="u-column1 col-1 woocommerce-Address">
                                             <header class="woocommerce-Address-title title">
                                                 <h3>Billing Address</h3>
-                                                <a href="{{route('user.show-billing-address')}}" class="edit">Edit</a>
+                                                @if(empty(\Illuminate\Support\Facades\Auth::user()->billing_first_name))
+                                                    <a href="{{route('user.show-billing-address')}}" class="edit">Edit</a>
+                                                @else
+                                                    <a href="{{route('user.edit-billing-address')}}" class="edit">Edit</a>
+                                                @endif
                                             </header>
+                                            @if(empty(\Illuminate\Support\Facades\Auth::user()->billing_first_name))
                                             <address>
                                                 You have not set up this type of address yet.		</address>
+                                            @else
+                                            <address>
+                                                {{\Illuminate\Support\Facades\Auth::user()->billing_first_name . ' ' .
+                                                 \Illuminate\Support\Facades\Auth::user()->billing_last_name}}
+                                                <br/>
+                                                {{ \Illuminate\Support\Facades\Auth::user()->billing_company }}
+                                                <br/>
+                                                {{ \Illuminate\Support\Facades\Auth::user()->billing_address_1 }}
+                                                @if(!empty(\Illuminate\Support\Facades\Auth::user()->billing_city))
+                                                <br/>
+                                                {{ \Illuminate\Support\Facades\Auth::user()->billing_city }}
+                                                @endif
+                                                <br/>
+                                                {{ \Illuminate\Support\Facades\Auth::user()->billing_country }}
+                                                <br/>
+                                            </address>
+                                            @endif
                                         </div>
 
 
                                         <div class="u-column2 col-2 woocommerce-Address">
                                             <header class="woocommerce-Address-title title">
                                                 <h3>Shipping Address</h3>
-                                                <a href="https://goatstee.com/my-account/edit-address/shipping" class="edit">Edit</a>
+                                                @if(empty(\Illuminate\Support\Facades\Auth::user()->shipping_first_name))
+                                                    <a href="{{route('user.show-shipping-address')}}" class="edit">Edit</a>
+                                                @else
+                                                    <a href="{{route('user.edit-shipping-address')}}" class="edit">Edit</a>
+                                                @endif
                                             </header>
-                                            <address>
-                                                You have not set up this type of address yet.		</address>
+                                            @if(empty(\Illuminate\Support\Facades\Auth::user()->shipping_first_name))
+                                                <address>
+                                                    You have not set up this type of address yet.		</address>
+                                            @else
+                                                <address>
+                                                    {{\Illuminate\Support\Facades\Auth::user()->shipping_first_name . ' ' .
+                                                     \Illuminate\Support\Facades\Auth::user()->shipping_last_name}}
+                                                    <br/>
+                                                    {{ \Illuminate\Support\Facades\Auth::user()->shipping_company }}
+                                                    <br/>
+                                                    {{ \Illuminate\Support\Facades\Auth::user()->shipping_address_1 }}
+                                                    @if(!empty(\Illuminate\Support\Facades\Auth::user()->shipping_city))
+                                                        <br/>
+                                                        {{ \Illuminate\Support\Facades\Auth::user()->shipping_city }}
+                                                    @endif
+                                                    <br/>
+                                                    {{ \Illuminate\Support\Facades\Auth::user()->shipping_country }}
+                                                    <br/>
+                                                </address>
+                                            @endif
                                         </div>
 
 

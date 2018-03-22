@@ -20,52 +20,50 @@
                                 @include('sites.components.error')
                                 {!! Form::open([
                                     'method' => 'POST',
-                                    'route' => 'user.save-billing-address',
+                                    'route' => 'user.save-shipping-address',
                                     'style' => 'padding-bottom: 30px'
                                 ]) !!}
-                                <h3>Billing Address</h3>
+                                <h3>Shipping Address</h3>
 
                                 <p class="form-row form-row form-row-first validate-required"
-                                   id="billing_first_name_field"><label for="billing_first_name" class="">First Name
+                                   id="shipping_first_name_field"><label for="shipping_first_name" class="">First Name
                                         <abbr class="required" title="required">*</abbr></label>
-                                    <input type="text" class="input-text " name="billing_first_name"
-                                           id="billing_first_name" placeholder=""
-                                           autocomplete="given-name" value="{{\Illuminate\Support\Facades\Auth::user()->billing_first_name}}" required/></p>
+                                    <input type="text" class="input-text " name="shipping_first_name"
+                                           id="shipping_first_name" placeholder=""
+                                           autocomplete="given-name" value="{{ old('shpping_first_name') }}" required/></p>
 
                                 <p class="form-row form-row form-row-last validate-required"
-                                   id="billing_last_name_field"><label for="billing_last_name" class="">Last Name <abbr
+                                   id="shipping_last_name_field"><label for="shipping_last_name" class="">Last Name <abbr
                                                 class="required" title="required">*</abbr></label>
-                                    <input type="text" class="input-text " name="billing_last_name"
-                                           id="billing_last_name" placeholder=""
-                                           autocomplete="family-name" value="{{\Illuminate\Support\Facades\Auth::user()->billing_last_name}}" required/></p>
+                                    <input type="text" class="input-text " name="shipping_last_name"
+                                           id="shipping_last_name" placeholder=""
+                                           autocomplete="family-name" value="{{ old('shipping_last_name') }}" required/></p>
                                 <div class="clear"></div>
 
-                                <p class="form-row form-row form-row-wide" id="billing_company_field"><label
-                                            for="billing_company" class="">Company Name</label>
-                                    <input type="text" class="input-text " name="billing_company" id="billing_company"
-                                           placeholder=""
-                                           autocomplete="organization" value="{{ \Illuminate\Support\Facades\Auth::user()->billing_company }}"/></p>
+                                <p class="form-row form-row form-row-wide" id="shipping_company_field"><label
+                                            for="shipping_company" class="">Company Name</label>
+                                    <input type="text" class="input-text " name="shipping_company" id="shipping_company"
+                                           placeholder="" autocomplete="organization" value="{{ old('shipping_company') }}"/></p>
 
                                 <p class="form-row form-row form-row-first validate-required validate-email"
-                                   id="billing_email_field"><label for="billing_email" class="">Email Address <abbr
+                                   id="shipping_email_field"><label for="shipping_email" class="">Email Address <abbr
                                                 class="required" title="required">*</abbr></label>
-                                    <input type="email" class="input-text " name="billing_email" id="billing_email"
-                                           placeholder=""
-                                           autocomplete="email" value="{{\Illuminate\Support\Facades\Auth::user()->billing_email }}" required/>
+                                    <input type="email" class="input-text " name="shipping_email" id="shipping_email"
+                                           placeholder="" autocomplete="email" value="{{ old('shipping_email') }}" required/>
                                 </p>
 
                                 <p class="form-row form-row form-row-last validate-required validate-phone"
-                                   id="billing_phone_field"><label for="billing_phone" class="">Phone <abbr
+                                   id="shipping_phone_field"><label for="shipping_phone" class="">Phone <abbr
                                                 class="required" title="required">*</abbr></label>
-                                    <input type="tel" class="input-text " name="billing_phone" id="billing_phone"
+                                    <input type="tel" class="input-text " name="shipping_phone" id="shipping_phone"
                                            placeholder=""
-                                           autocomplete="tel" value="{{ \Illuminate\Support\Facades\Auth::user()->billing_phone }}" required/></p>
+                                           autocomplete="tel" value="{{ old('shipping_phone') }}" required/></p>
                                 <div class="clear"></div>
 
                                 <p class="form-row form-row form-row-wide address-field update_totals_on_change validate-required"
-                                   id="billing_country_field"><label for="billing_country" class="">Country <abbr
+                                   id="shipping_country_field"><label for="shipping_country" class="">Country <abbr
                                                 class="required" title="required">*</abbr></label><select
-                                            name="billing_country" id="billing_country" autocomplete="country"
+                                            name="shipping_country" id="shipping_country" autocomplete="country"
                                             class="country_to_state country_select ">
                                         <option value="">Select a country&hellip;</option>
                                         <option value="AX">&#197;land Islands</option>
@@ -323,38 +321,35 @@
                                 </p>
 
                                 <p class="form-row form-row form-row-wide address-field validate-required"
-                                   id="billing_address_1_field"><label for="billing_address_1" class="">Address <abbr
+                                   id="shipping_address_1_field"><label for="shipping_address_1" class="">Address <abbr
                                                 class="required" title="required">*</abbr></label>
-                                    <input type="text" class="input-text " name="billing_address_1"
-                                           id="billing_address_1" placeholder="Street address"
-                                           autocomplete="address-line1" value="{{ \Illuminate\Support\Facades\Auth::user()->billing_address_1 }}" required/></p>
+                                    <input type="text" class="input-text " name="shipping_address_1"
+                                           id="shipping_address_1" placeholder="Street address"
+                                           autocomplete="address-line1" value="{{ old('shipping_address_1') }}" required/></p>
 
-                                <p class="form-row form-row form-row-wide address-field" id="billing_address_2_field">
-                                    <input type="text" class="input-text " name="billing_address_2"
-                                           id="billing_address_2" placeholder="Apartment, suite, unit etc. (optional)"
-                                           autocomplete="address-line2" value="{{ \Illuminate\Support\Facades\Auth::user()->billing_address_2 }}"/></p>
+                                <p class="form-row form-row form-row-wide address-field" id="shipping_address_2_field">
+                                    <input type="text" class="input-text " name="shipping_address_2"
+                                           id="shipping_address_2" placeholder="Apartment, suite, unit etc. (optional)"
+                                           autocomplete="address-line2" value="{{ old('shipping_address_2') }}"/></p>
 
                                 <p class="form-row form-row form-row-wide address-field validate-required"
-                                   id="billing_city_field"><label for="billing_city" class="">Town / City <abbr
+                                   id="shipping_city_field"><label for="shipping_city" class="">Town / City <abbr
                                                 class="required" title="required">*</abbr></label>
-                                    <input type="text" class="input-text " name="billing_city" id="billing_city"
-                                           placeholder="" autocomplete="address-level2"
-                                           value="{{ \Illuminate\Support\Facades\Auth::user()->billing_city}}" required/></p>
+                                    <input type="text" class="input-text " name="shipping_city" id="shipping_city"
+                                           placeholder="" autocomplete="address-level2" value="{{ old('shipping_city') }}" required/></p>
 
                                 <p class="form-row form-row form-row-wide address-field update_totals_on_change validate-required"
-                                   id="billing_state_field" style="width: 400px; float: left">
-                                        <label for="billing_state_field">State
-                                                <abbr class="required" title="required">*</abbr>
-                                        </label>
-                                    <input type="text" class="input-text " name="billing_state" id="billing_state"
-                                           placeholder="" autocomplete="postal-code"
-                                           value="{{ \Illuminate\Support\Facades\Auth::user()->billing_state }}" required/>
+                                   id="shipping_state_field" style="width: 400px; float: left"><label
+                                            for="shipping_state_field">State <abbr class="required"
+                                                                                  title="required">*</abbr></label>
+                                    <input type="text" class="input-text " name="shipping_state" id="shipping_state"
+                                           placeholder="" autocomplete="postal-code" value="{{ old('shipping_state') }}" required/>
 
                                 <p class="form-row form-row form-row-last address-field validate-required validate-postcode"
-                                   id="billing_postcode_field"><label for="billing_postcode" class="">ZIP </label>
-                                    <input type="text" class="input-text " name="billing_postcode" id="billing_postcode"
+                                   id="shipping_postcode_field"><label for="shipping_postcode" class="">ZIP </label>
+                                    <input type="text" class="input-text " name="shipping_postcode" id="shipping_postcode"
                                            placeholder=""
-                                           autocomplete="postal-code" value="{{ \Illuminate\Support\Facades\Auth::user()->billing_postcode}}"/></p>
+                                           autocomplete="postal-code" value="{{ old('shipping_postcode') }}"/></p>
                                 <div class="clear"></div>
                                 <button class="button"> Save Address</button>
                                 </form>
@@ -374,8 +369,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script>
-        $('#billing_country').select2();
-        $('#billing_state').select2();
+        $('#shipping_country').select2();
+        $('#shipping_state').select2();
 
     </script>
 @endsection

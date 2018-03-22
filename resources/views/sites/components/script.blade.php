@@ -142,3 +142,4 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
 <script type='text/javascript' src='https://goatstee.com/wp-includes/js/masonry.min.js?ver=3.3.2'></script>
 <script type='text/javascript' src='https://goatstee.com/wp-content/themes/shopy/assets/js/shopy.min.js'></script>
 <script type='text/javascript' src='https://goatstee.com/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
