@@ -44,6 +44,9 @@ Route::group([ 'namespace' => 'Sites'], function()
         Route::get('/create-shipping-address', 'UserController@showShippingAddress')->name('user.show-shipping-address');
         Route::get('/edit-shipping-address', 'UserController@editShippingAddress')->name('user.edit-shipping-address');
         Route::post('/save-shpping-address', 'UserController@saveShippingAddress')->name('user.save-shipping-address');
+
+        Route::get('account-detail', 'UserController@showAccount')->name('user.detail-user');
+        Route::post('saveUser', 'UserController@saveAccount')->name('user.save-account');
     });
 });
 Route::group([ 'namespace' => 'Admin', 'prefix' => 'admin'], function()

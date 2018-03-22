@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Sites;
 
 use App\Http\Requests\BillingAddressRequest;
 use App\Http\Requests\ShippingAddressRequest;
+use App\Http\Requests\UserAccountRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -61,6 +62,29 @@ class UserController extends Controller
         try {
             Auth::user()->update($request->all());
             return redirect()->route('user.address')->with('messages', 'Address changed successfully.');
+        } catch (Exception $ex) {
+            return redirect()->back()->with('errors', $ex->getMessage());
+        }
+    }
+    public function showAccount()
+    {
+        return view('sites.user.account-detail');
+    }
+    public function saveAccount(UserAccountRequest $request)
+    {
+        try {
+            if (Auth::attempt(['email' => Auth::user()->email, 'password' => $request->password_current])) {
+                Auth::user()->update([
+                    'email' => $request->email,
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'password' => bcrypt($request->new_password)
+                ]);
+                return redirect()->route('user.address')->with('messages', 'Address changed successfully.');
+            } else {
+                return redirect()->back()->withErrors('Username or password is not correct!');
+            }
+
         } catch (Exception $ex) {
             return redirect()->back()->with('errors', $ex->getMessage());
         }
