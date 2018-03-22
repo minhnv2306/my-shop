@@ -7,6 +7,10 @@ use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
+    public function index()
+    {
+        return view('sites.home');
+    }
     public function aboutUs()
     {
         return view('sites.about-us');

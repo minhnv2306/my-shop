@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
 });
 Route::group([ 'namespace' => 'Sites'], function()
 {
+    Route::get('/', 'HomeController@index')->name('home');
     Route::get('/about-us', 'HomeController@aboutUs')->name('sites.about-us');
     Route::get('/contact-us', 'HomeController@contactUs')->name('sites.contact-us');
     Route::get('/faqs', 'HomeController@faqs')->name('sites.faqs');
@@ -35,7 +36,7 @@ Route::group([ 'namespace' => 'Sites'], function()
     Route::get('/logout', 'UserController@logout');
     Route::post('/loginSite', 'UserController@login')->name('sites.login');
 
-    Route::group([ 'prefix' => 'users'], function() {
+    Route::group([ 'prefix' => 'users', 'middleware' => 'myauth'], function() {
         Route::get('/address', 'UserController@address')->name('user.address');
         Route::get('/create-billing-address', 'UserController@showBillingAddress')->name('user.show-billing-address');
         Route::get('/edit-billing-address', 'UserController@editBillingAddress')->name('user.edit-billing-address');
@@ -51,8 +52,11 @@ Route::group([ 'namespace' => 'Sites'], function()
 });
 Route::group([ 'namespace' => 'Admin', 'prefix' => 'admin'], function()
 {
-    Route::get('/', 'AdminController@index')->name('admin.index');
-    Route::get('users', 'UserController@index')->name('users.index');
+    Route::group(['middleware' => 'adminauth'], function () {
+        Route::get('/', 'AdminController@index')->name('admin.index');
+        Route::get('users', 'UserController@index')->name('users.index');
+    });
+    Route::post('/login', 'UserController@login')->name('admin.login');
 });
 
 

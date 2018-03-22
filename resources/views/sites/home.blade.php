@@ -1,5 +1,5 @@
 @extends('layouts.sites')
-@section('title', 'Home page')
+@section('title', 'Home Page')
 @section('content')
     <div id="content" class="site-content">
         <div class="container">
@@ -462,3 +462,5 @@
         </div><!-- .container -->
     </div><!-- #content -->
 @endsection
+
+

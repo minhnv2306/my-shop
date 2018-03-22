@@ -29,7 +29,7 @@
 
         <div class="site-branding">
             <div id="logo" itemscope itemtype="http://schema.org/Brand">
-                <a href="#" itemprop="url" rel="home">
+                <a href="{{route('home')}}" itemprop="url" rel="home">
                     <img itemprop="logo" src="https://goatstee.com/wp-content/uploads/2016/10/logo.png"
                          alt="Goatstee"/>
                 </a>

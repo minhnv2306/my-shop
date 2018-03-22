@@ -1,5 +1,5 @@
 @extends('layouts.sites')
-@section('title', 'My account')
+@section('title', 'My Account')
 @section('content')
     @if(\Illuminate\Support\Facades\Auth::check())
         <div id="content" class="site-content">

@@ -73,16 +73,31 @@ class UserController extends Controller
     public function saveAccount(UserAccountRequest $request)
     {
         try {
-            if (Auth::attempt(['email' => Auth::user()->email, 'password' => $request->password_current])) {
+            if (empty($request->password_current) && empty($request->new_password) && empty($request->new_password_confirmation)) {
                 Auth::user()->update([
-                    'email' => $request->email,
                     'first_name' => $request->first_name,
+                    'email' => $request->email,
                     'last_name' => $request->last_name,
-                    'password' => bcrypt($request->new_password)
+
                 ]);
                 return redirect()->route('user.address')->with('messages', 'Address changed successfully.');
             } else {
-                return redirect()->back()->withErrors('Username or password is not correct!');
+                $this->validate($request, [
+                    'password_current' => 'required',
+                    'new_password' => 'required|min:8|confirmed',
+                ]);
+
+                if (Auth::attempt(['email' => Auth::user()->email, 'password' => $request->password_current])) {
+                    Auth::user()->update([
+                        'email' => $request->email,
+                        'first_name' => $request->first_name,
+                        'last_name' => $request->last_name,
+                        'password' => bcrypt($request->new_password)
+                    ]);
+                    return redirect()->route('user.address')->with('messages', 'Address changed successfully.');
+                } else {
+                    return redirect()->back()->withErrors('Username or password is not correct!');
+                }
             }
 
         } catch (Exception $ex) {
