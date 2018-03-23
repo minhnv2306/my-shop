@@ -3,9 +3,12 @@ return [
     'create' => 'Create new product',
     'table' => [
         'id' => 'ID',
-        'name' => 'name',
-        'email' => 'email',
-        'created_at' => 'Create at',
+        'name' => 'Name',
+        'avatar' => 'Avatar',
+        'price' => 'Price',
+        'image' => 'Image',
+        'color' => 'Color',
+        'size' => 'Size',
         'action'    => 'Action'
 
     ]
