@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Sites;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -9,7 +10,16 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('sites.home');
+        $products = Product::orderBy('created_at', 'desc')
+            ->limit(4)
+            ->get();
+        $sale_products = Product::orderBy('sale_number', 'desc')
+            ->limit(4)
+            ->get();
+        return view('sites.home', [
+            'products' => $products,
+            'sale_products' => $sale_products,
+        ]);
     }
     public function aboutUs()
     {
