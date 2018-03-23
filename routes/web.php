@@ -55,6 +55,8 @@ Route::group([ 'namespace' => 'Admin', 'prefix' => 'admin'], function()
     Route::group(['middleware' => 'adminauth'], function () {
         Route::get('/', 'AdminController@index')->name('admin.index');
         Route::get('users', 'UserController@index')->name('users.index');
+
+        Route::resource('products', 'ProductController');
     });
     Route::post('/login', 'UserController@login')->name('admin.login');
 });

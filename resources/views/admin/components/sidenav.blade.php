@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="treeview">
-                <a href="{{route('users.index')}}">
+                <a href="{{route('products.index')}}">
                     <i class="fa fa-product-hunt"></i> <span>Product manager</span>
                 </a>
             </li>
