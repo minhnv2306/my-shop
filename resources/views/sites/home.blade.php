@@ -130,14 +130,11 @@
                                     <li class="post-2778926 product type-product status-publish has-post-thumbnail yith-wishlist entry  instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $products[2]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="https://images-na.ssl-images-amazon.com/images/I/71JI-8zKbfL._UL1500_.jpg?fifu"
-                                                 alt="Zombie Jesus Day - Easter Tshirt"></img>
-                                            <h3>Zombie Jesus Day &#8211; Easter Tshirt</h3>
+                                            <img src="{{getLinkImage($products[2]->avatar)}}"></img>
+                                            <h3>{{$products[2]->name}}</h3>
 
                                             <span class="price"><span class="woocommerce-Price-amount amount"><span
-                                                            class="woocommerce-Price-currencySymbol">&#36;</span>17.95</span>&ndash;<span
-                                                        class="woocommerce-Price-amount amount"><span
-                                                            class="woocommerce-Price-currencySymbol">&#36;</span>25.95</span></span>
+                                                            class="woocommerce-Price-currencySymbol">&#36;</span>{{$products[2]->price}}</span></span>
                                         </a><a href="https://goatstee.com/product/zombie-jesus-day-easter-tshirt/"
                                                rel="nofollow" data-product_id="2778926" data-product_sku=""
                                                data-quantity="1"
@@ -183,14 +180,11 @@
                                     <li class="post-2779007 product type-product status-publish has-post-thumbnail yith-wishlist entry last instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $products[3]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="https://images-na.ssl-images-amazon.com/images/I/71S4j0oPE+L._UL1500_.jpg?fifu"
-                                                 alt="Im The Juan For You - Funny Cinco De Mayo Saying T-shirt"></img>
-                                            <h3>Im The Juan For You &#8211; Funny Cinco De Mayo Saying T-shirt</h3>
+                                            <img src="{{getLinkImage($products[3]->avatar)}}"></img>
+                                            <h3>{{$products[3]->name}}</h3>
 
                                             <span class="price"><span class="woocommerce-Price-amount amount"><span
-                                                            class="woocommerce-Price-currencySymbol">&#36;</span>17.95</span>&ndash;<span
-                                                        class="woocommerce-Price-amount amount"><span
-                                                            class="woocommerce-Price-currencySymbol">&#36;</span>25.95</span></span>
+                                                            class="woocommerce-Price-currencySymbol">&#36;</span>{{$products[3]->price}}</span></span>
                                         </a><a href="https://goatstee.com/product/im-the-juan-for-you-funny-cinco-de-mayo-saying-t-shirt/"
                                                rel="nofollow" data-product_id="2779007" data-product_sku=""
                                                data-quantity="1"
@@ -249,7 +243,7 @@
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
                                             <img src="{{getLinkImage($sale_products[0]->avatar)}}"
                                                  alt="Total Solar Eclipse Summer August 21st 2017 T Shirt"></img>
-                                            <h3>Total Solar Eclipse Summer August 21st 2017 T Shirt</h3>
+                                            <h3>{{$sale_products[0]->name}}</h3>
 
                                             <span class="price"><span class="woocommerce-Price-amount amount"><span
                                                             class="woocommerce-Price-currencySymbol">&#36;</span>{{$sale_products[0]->price}}</span></span>
@@ -293,13 +287,13 @@
                                         <div class="clear"></div>
                                     </li>
                                 @endif
-                                @if(!empty($products[1]))
+                                @if(!empty($sale_products[1]))
                                     <li class="post-2293410 product type-product status-publish has-post-thumbnail yith-wishlist entry  instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $sale_products[1]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
                                             <img src="{{getLinkImage($sale_products[1]->avatar)}}"
                                                  alt="Catholics Vs Convicts On Back 1988 Classic T Shirt"></img>
-                                            <h3>Catholics Vs Convicts On Back 1988 Classic T Shirt</h3>
+                                            <h3>{{$sale_products[1]->name}}</h3>
 
                                             <span class="price"><span class="woocommerce-Price-amount amount"><span
                                                             class="woocommerce-Price-currencySymbol">&#36;</span>{{$sale_products[1]->price}}</span></span>
@@ -350,7 +344,7 @@
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
                                             <img src="{{getLinkImage($sale_products[2]->avatar)}}"
                                                  alt="Donald J Trump President Inauguration Day 2017 T-shirt"></img>
-                                            <h3>Donald J Trump President Inauguration Day 2017 T-shirt</h3>
+                                            <h3>{{$sale_products[2]->name}}</h3>
 
                                             <span class="price"><span class="woocommerce-Price-amount amount"><span
                                                             class="woocommerce-Price-currencySymbol">&#36;</span>{{$sale_products[2]->price}}</span></span>
@@ -401,7 +395,7 @@
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
                                             <img src="{{getLinkImage($sale_products[3]->avatar)}}"
                                                  alt="S-mi-le t shirt Mo-re Roman-Atwood - T Shirt"></img>
-                                            <h3>S-mi-le t shirt Mo-re Roman-Atwood &#8211; T Shirt</h3>
+                                            <h3>{{$sale_products[3]->name}}</h3>
 
                                             <span class="price"><span class="woocommerce-Price-amount amount"><span
                                                             class="woocommerce-Price-currencySymbol">&#36;</span>{{$sale_products[3]->price}}</span></span>

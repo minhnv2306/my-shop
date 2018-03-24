@@ -16,15 +16,11 @@
                                             Hello <strong>{{convertEmailToUsername(\Illuminate\Support\Facades\Auth::user()->email)}}</strong>
                                             (not {{convertEmailToUsername(\Illuminate\Support\Facades\Auth::user()->email)}} <a href="/logout">Sign out</a>)</p>
                                         <p>
-                                            From your account dashboard you can view your <a href="https://goatstee.com/my-account/orders/">recent orders</a>, manage your <a href="https://goatstee.com/my-account/edit-address/">shipping and billing addresses</a> and <a href="https://goatstee.com/my-account/edit-account/">edit your password and account details</a>.</p>
+                                            From your account dashboard you can view your <a href="#">recent orders</a>, manage your <a href="{{route('user.address')}}">shipping and billing addresses</a> and <a href="{{route('user.detail-user')}}">edit your password and account details</a>.</p>
                                     </div>
                                 </div>
                             </div><!-- .entry-content -->
-
-
                         </article><!-- #post-## -->
-
-
 
                     </main><!-- #main -->
                 </div><!-- #primary -->

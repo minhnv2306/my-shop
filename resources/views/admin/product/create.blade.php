@@ -29,16 +29,16 @@
                         <div class="form-group">
                             <label for="sel1">Color:</label>
                             <br/>
-                            <label class="checkbox-inline"><input type="checkbox" name="color1" value="Black"> Black</label>
-                            <label class="checkbox-inline"><input type="checkbox" name="color2" value="White"> White</label>
-                            <label class="checkbox-inline"><input type="checkbox" name="color3" value="Red"> Red</label>
+                            @foreach(\App\Models\Product::getColor() as $key=>$value)
+                            <label class="checkbox-inline"><input type="checkbox" name="color{{$key}}" value="{{$value}}"> {{$value}}</label>
+                            @endforeach
                         </div>
                         <div class="form-group">
                             <label for="sel1">Size:</label>
                             <br/>
-                            <label class="checkbox-inline"><input type="checkbox" name="size1" value="S"> S</label>
-                            <label class="checkbox-inline"><input type="checkbox" name="size2" value="M"> M</label>
-                            <label class="checkbox-inline"><input type="checkbox" name="size3" value="L"> L</label>
+                            @foreach(\App\Models\Product::getSize() as $key=>$value)
+                            <label class="checkbox-inline"><input type="checkbox" name="size{{$key}}" value="{{$value}}"> {{$value}}</label>
+                            @endforeach
                         </div>
                         <div class="form-group">
                             <label for="sel1">Type:</label>

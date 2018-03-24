@@ -8,6 +8,7 @@ use App\Models\Product_size;
 use App\Models\Review;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -15,16 +16,15 @@ class ProductController extends Controller
     {
         $colors = Product_color::where('product_id', $product->id)->get(['color_name']);
         $sizes = Product_size::where('product_id', $product->id)->get(['size']);
-        $reviews = Review::where([
-            'product_id' => $product->id,
-            'approved' => 1
-        ])->get();
+        $reviews = Review::getReviews($product->id, null, 1);
 
+        $reviews_waiting = Review::getReviews($product->id, Auth::user()->email, 0);
         return view('sites.product.show', [
             'product' => $product,
             'colors' => $colors,
             'sizes' => $sizes,
             'reviews' => $reviews,
+            'reviews_waiting' => $reviews_waiting,
         ]);
     }
 }

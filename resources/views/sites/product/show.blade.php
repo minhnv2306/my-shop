@@ -717,18 +717,18 @@
                                             <td class="value">
                                                 <select id="color" class="" name="attribute_color"
                                                         data-attribute_name="attribute_color"
-                                                data-show_option_none="yes">
-                                                <option value="">Choose an option</option>
-                                                @foreach($colors as $color)
-                                                    <option value="{{$color->color_name}}">{{$color->color_name}}</option>
+                                                        data-show_option_none="yes">
+                                                    <option value="">Choose an option</option>
+                                                    @foreach($colors as $color)
+                                                        <option value="{{$color->color_name}}">{{$color->color_name}}</option>
                                                     @endforeach
-                                                    </select>                        </td>
+                                                </select></td>
                                         </tr>
                                         <tr>
                                             <td class="label"><label for="size">Size</label></td>
                                             <td class="value">
                                                 <select id="size" class="" name="attribute_size"
-                                                        data-attribute_name="attribute_size""
+                                                        data-attribute_name="attribute_size"
                                                 data-show_option_none="yes">
                                                 <option value="">Choose an option</option>
                                                 @foreach($sizes as $size)
@@ -740,12 +740,24 @@
                                             <td class="label"><label for="fit-type">Fit Type</label></td>
                                             <td class="value">
                                                 <select id="fit-type" class="" name="attribute_fit-type"
-                                                        data-attribute_name="attribute_fit-type""
+                                                        data-attribute_name="attribute_fit-type"
                                                 data-show_option_none="yes">
                                                 <option value="">Choose an option</option>
                                                 <option value="men" selected='selected'>Men</option>
                                                 <option value="women">Women</option>
-                                                </select><a class="reset_variations" href="#">Clear</a></td>
+                                                </select><a class="reset_variations" href="#">Clear</a>
+                                            </td>
+                                            <input type="hidden" value="{{$product->price}}" id="price">
+                                        </tr>
+                                        <tr>
+                                            <td class="label">
+                                                <p class="price total_price">
+                                                    <span class="woocommerce-Price-amount amount" id="total_number">
+                                                        <span class="woocommerce-Price-currencySymbol">&#36;</span>
+                                                        {{$product->price}}
+                                                    </span>
+                                                </p>
+                                            </td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -756,7 +768,7 @@
                                         <div class="woocommerce-variation-add-to-cart variations_button">
                                             <div class="quantity">
                                                 <input type="number" step="1" min="" max="" name="quantity" value="1"
-                                                       title="Qty" class="input-text qty text" size="4" pattern="[0-9]*"
+                                                       title="Qty" class="input-text qty text number_product" size="4" pattern="[0-9]*"
                                                        inputmode="numeric"/>
                                             </div>
                                             <button type="submit" class="single_add_to_cart_button button alt">Add to
@@ -905,56 +917,78 @@
                                             <h2 class="woocommerce-Reviews-title">Reviews</h2>
                                             <ol class="commentlist">
                                                 @if(count($reviews) == 0)
-                                                <p class="woocommerce-noreviews">There are no reviews yet.</p>
+                                                    <p class="woocommerce-noreviews">There are no reviews yet.</p>
                                                 @endif
-                                                <li itemprop="review" itemscope itemtype="http://schema.org/Review" class="comment even thread-even depth-1" id="li-comment-8715">
+                                                @if(count($reviews_waiting))
+                                                    @foreach($reviews_waiting as $review_waiting)
+                                                        <li itemprop="review" itemscope
+                                                            itemtype="http://schema.org/Review"
+                                                            class="comment even thread-even depth-1"
+                                                            id="li-comment-8715">
 
-                                                    <div id="comment-8715" class="comment_container">
+                                                            <div id="comment-8715" class="comment_container">
 
-                                                        <img alt='' src='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' itemprop="image" />
-                                                        <div class="comment-text">
+                                                                <img alt=''
+                                                                     src='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=60&#038;d=mm&#038;r=g'
+                                                                     srcset='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=120&amp;d=mm&amp;r=g 2x'
+                                                                     class='avatar avatar-60 photo' height='60'
+                                                                     width='60' itemprop="image"/>
+                                                                <div class="comment-text">
 
 
-                                                            <div>
+                                                                    <div>
                                                                 <span style="width:100%">
-                                                                    <i class="fa fa-star"></i>
-                                                                    <i class="fa fa-star"></i>
-                                                                </span>
-                                                            </div>
-
-
-                                                            <p class="meta"><em>Your comment is awaiting approval</em></p>
-
-                                                            <div itemprop="description" class="description"><p>Product is so good!</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li><!-- #comment-## -->
-                                                @foreach($reviews as $review)
-                                                <li itemprop="review" itemscope itemtype="http://schema.org/Review" class="comment even thread-even depth-1" id="li-comment-8715">
-
-                                                    <div id="comment-8715" class="comment_container">
-
-                                                        <img alt='' src='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' itemprop="image" />
-                                                        <div class="comment-text">
-
-
-                                                            <div>
-                                                                <span style="width:100%">
-                                                                    @for($i = 0; $i < $review->rating; $i++)
-                                                                    <i class="fa fa-star"></i>
+                                                                    @for($i = 0; $i < $review_waiting->rating; $i++)
+                                                                        <i class="fa fa-star"></i>
                                                                     @endfor
                                                                 </span>
+                                                                    </div>
+
+
+                                                                    <p class="meta"><em>Your comment is awaiting
+                                                                            approval</em></p>
+
+                                                                    <div itemprop="description" class="description"><p>
+                                                                            {{$review_waiting->comment}}</p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
+                                                        </li><!-- #comment-## -->
+                                                    @endforeach
+                                                @endif
+                                                @foreach($reviews as $review)
+                                                    <li itemprop="review" itemscope
+                                                        itemtype="http://schema.org/Review"
+                                                        class="comment even thread-even depth-1"
+                                                        id="li-comment-8715">
+
+                                                        <div id="comment-8715" class="comment_container">
+
+                                                            <img alt=''
+                                                                 src='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=60&#038;d=mm&#038;r=g'
+                                                                 srcset='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=120&amp;d=mm&amp;r=g 2x'
+                                                                 class='avatar avatar-60 photo' height='60'
+                                                                 width='60' itemprop="image"/>
+                                                            <div class="comment-text">
 
 
-                                                            <p class="meta">{{$review->author}}</p>
+                                                                <div>
+                                                                <span style="width:100%">
+                                                                    @for($i = 0; $i < $review->rating; $i++)
+                                                                        <i class="fa fa-star"></i>
+                                                                    @endfor
+                                                                </span>
+                                                                </div>
 
-                                                            <div itemprop="description" class="description"><p>{{$review->comment}}</p>
+
+                                                                <p class="meta">{{$review->author}}</p>
+
+                                                                <div itemprop="description" class="description">
+                                                                    <p>{{$review->comment}}</p>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </li><!-- #comment-## -->
+                                                    </li><!-- #comment-## -->
                                                 @endforeach
                                             </ol>
                                         </div>
@@ -975,34 +1009,41 @@
                                                         'class' => 'comment-form',
                                                         'route' => 'sites.reviews.store'
                                                     ]) !!}
-                                                        <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span>
-                                                            Required fields are marked <span class="required">*</span>
+                                                    <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span>
+                                                        Required fields are marked <span class="required">*</span>
+                                                    </p>
+                                                    <p class="comment-form-rating"><label for="rating">Your
+                                                            Rating</label><select name="rating" id="rating"
+                                                                                  aria-required="true" required>
+                                                            <option value="">Rate&hellip;</option>
+                                                            <option value="5">Perfect</option>
+                                                            <option value="4">Good</option>
+                                                            <option value="3">Average</option>
+                                                            <option value="2">Not that bad</option>
+                                                            <option value="1">Very Poor</option>
+                                                        </select></p>
+                                                    <p class="comment-form-comment"><label for="comment">Your Review
+                                                            <span class="required">*</span></label><textarea
+                                                                id="comment" name="comment" cols="45" rows="8"
+                                                                aria-required="true" required></textarea>
+                                                    </p>
+                                                    @if(! \Illuminate\Support\Facades\Auth::check())
+                                                        <p class="comment-form-author">
+                                                            <label for="author">Name
+                                                                <span class="required">*</span>
+                                                            </label>
+                                                            <input id="author" name="author" type="text" value=""
+                                                                   size="30" aria-required="true" required/>
                                                         </p>
-                                                        <p class="comment-form-rating"><label for="rating">Your
-                                                                Rating</label><select name="rating" id="rating"
-                                                                                      aria-required="true" required>
-                                                                <option value="">Rate&hellip;</option>
-                                                                <option value="5">Perfect</option>
-                                                                <option value="4">Good</option>
-                                                                <option value="3">Average</option>
-                                                                <option value="2">Not that bad</option>
-                                                                <option value="1">Very Poor</option>
-                                                            </select></p>
-                                                        <p class="comment-form-comment"><label for="comment">Your Review
-                                                                <span class="required">*</span></label><textarea
-                                                                    id="comment" name="comment" cols="45" rows="8"
-                                                                    aria-required="true" required></textarea></p>
-                                                        <p class="comment-form-author"><label for="author">Name <span
-                                                                        class="required">*</span></label> <input
-                                                                    id="author" name="author" type="text" value=""
-                                                                    size="30" aria-required="true" required/></p>
-                                                        <p class="comment-form-email"><label for="email">Email <span
-                                                                        class="required">*</span></label> <input
-                                                                    id="email" name="email" type="email" value=""
-                                                                    size="30" aria-required="true" required/></p>
-                                                        <p class="form-submit">
-                                                            <button id="submit" class="submit"> Submit</button>
-                                                        </p>
+                                                        <p class="comment-form-email">
+                                                            <label for="email">Email <span
+                                                                        class="required">*</span></label>
+                                                            <input id="email" name="email" type="email" value=""
+                                                                   size="30" aria-required="true" required/></p>
+                                                    @endif
+                                                    <p class="form-submit">
+                                                        <button id="submit" class="submit"> Submit</button>
+                                                    </p>
                                                     <input type="hidden" name="product_id" value="{{$product->id}}">
                                                     {!! Form::close() !!}
                                                 </div><!-- #respond -->
@@ -1317,6 +1358,17 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
 </script>
 <script type='text/javascript'
         src='//goatstee.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js?ver=2.6.7'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.number_product').change(function () {
+            var price = $('#price').val();
+            var number_product = $('.number_product').val();
+            var total_price = price * number_product;
+            $('.total_price').html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$ </span>' + total_price + '</span>');
+        })
+    })
+</script>
 
 </body>
 </html>
