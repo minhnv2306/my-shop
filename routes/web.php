@@ -38,6 +38,8 @@ Route::group([ 'namespace' => 'Sites'], function()
 
     Route::get('/products/{product}', 'ProductController@show')->name('sites.products.show');
 
+    Route::post('/reviews/store', 'ReviewController@store')->name('sites.reviews.store');
+
     Route::group([ 'prefix' => 'users', 'middleware' => 'myauth'], function() {
         Route::get('/address', 'UserController@address')->name('user.address');
         Route::get('/create-billing-address', 'UserController@showBillingAddress')->name('user.show-billing-address');

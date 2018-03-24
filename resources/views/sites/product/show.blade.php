@@ -650,7 +650,8 @@
                                    title="Armed Forces Day Honor Their Sacrifice Military T-shirt"
                                    data-rel="prettyPhoto[product-gallery]"><!-- Featured Image From URL plugin -->
                                     <img src="{{getLinkImage($product->avatar)}}"
-                                         alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"/></a>
+                                         alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"/>
+                                </a>
                                 <div class="thumbnails columns-4">
                                     @if(!empty($product->image_1))
                                         <a href='{{getLinkImage($product->image_1)}}'
@@ -658,14 +659,15 @@
                                            data-rel=prettyPhoto[product-gallery]>
                                             <!-- Featured Image From URL plugin -->
                                             <img src="{{getLinkImage($product->image_1)}}"
-                                                 alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"></img></a>
+                                                 alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"></img>
+                                        </a>
                                     @endif
                                     @if(!empty($product->image_2))
                                         <a href='{{getLinkImage($product->image_2)}}'
                                            class='zoom' title='Armed Forces Day Honor Their Sacrifice Military T-shirt'
                                            data-rel=prettyPhoto[product-gallery]>
                                             <!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($product->image_1)}}"
+                                            <img src="{{getLinkImage($product->image_2)}}"
                                                  alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"></img></a>
                                     @endif
                                     @if(!empty($product->image_3))
@@ -714,7 +716,7 @@
                                             <td class="label"><label for="color">Color</label></td>
                                             <td class="value">
                                                 <select id="color" class="" name="attribute_color"
-                                                        data-attribute_name="attribute_color""
+                                                        data-attribute_name="attribute_color"
                                                 data-show_option_none="yes">
                                                 <option value="">Choose an option</option>
                                                 @foreach($colors as $color)
@@ -824,7 +826,7 @@
                                         <a href="#tab-additional_information">Additional Information</a>
                                     </li>
                                     <li class="reviews_tab">
-                                        <a href="#tab-reviews">Reviews (0)</a>
+                                        <a href="#tab-reviews">Reviews ({{count($reviews)}})</a>
                                     </li>
                                 </ul>
                                 <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--description panel entry-content wc-tab"
@@ -901,26 +903,78 @@
                                     <div id="reviews" class="woocommerce-Reviews">
                                         <div id="comments">
                                             <h2 class="woocommerce-Reviews-title">Reviews</h2>
+                                            <ol class="commentlist">
+                                                @if(count($reviews) == 0)
+                                                <p class="woocommerce-noreviews">There are no reviews yet.</p>
+                                                @endif
+                                                <li itemprop="review" itemscope itemtype="http://schema.org/Review" class="comment even thread-even depth-1" id="li-comment-8715">
+
+                                                    <div id="comment-8715" class="comment_container">
+
+                                                        <img alt='' src='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' itemprop="image" />
+                                                        <div class="comment-text">
 
 
-                                            <p class="woocommerce-noreviews">There are no reviews yet.</p>
+                                                            <div>
+                                                                <span style="width:100%">
+                                                                    <i class="fa fa-star"></i>
+                                                                    <i class="fa fa-star"></i>
+                                                                </span>
+                                                            </div>
 
+
+                                                            <p class="meta"><em>Your comment is awaiting approval</em></p>
+
+                                                            <div itemprop="description" class="description"><p>Product is so good!</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li><!-- #comment-## -->
+                                                @foreach($reviews as $review)
+                                                <li itemprop="review" itemscope itemtype="http://schema.org/Review" class="comment even thread-even depth-1" id="li-comment-8715">
+
+                                                    <div id="comment-8715" class="comment_container">
+
+                                                        <img alt='' src='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=60&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/5afcf36b24f4536dd428d27167c129ff?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' itemprop="image" />
+                                                        <div class="comment-text">
+
+
+                                                            <div>
+                                                                <span style="width:100%">
+                                                                    @for($i = 0; $i < $review->rating; $i++)
+                                                                    <i class="fa fa-star"></i>
+                                                                    @endfor
+                                                                </span>
+                                                            </div>
+
+
+                                                            <p class="meta">{{$review->author}}</p>
+
+                                                            <div itemprop="description" class="description"><p>{{$review->comment}}</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li><!-- #comment-## -->
+                                                @endforeach
+                                            </ol>
                                         </div>
 
 
                                         <div id="review_form_wrapper">
                                             <div id="review_form">
                                                 <div id="respond" class="comment-respond">
-                                                    <h3 id="reply-title" class="comment-reply-title">Be the first to
-                                                        review &ldquo;Armed Forces Day Honor Their Sacrifice Military
-                                                        T-shirt&rdquo;
+                                                    <h3 id="reply-title" class="comment-reply-title">Add your
+                                                        review for &ldquo;{{$product->name}}&rdquo;
                                                         <small><a rel="nofollow" id="cancel-comment-reply-link"
                                                                   href="/product/armed-forces-day-honor-their-sacrifice-military-t-shirt/#respond"
                                                                   style="display:none;">Cancel reply</a></small>
                                                     </h3>
-                                                    <form action="https://goatstee.com/wp-comments-post.php"
-                                                          method="post" id="commentform" class="comment-form"
-                                                          novalidate>
+                                                    {!! Form::open([
+                                                        'method' => 'POST',
+                                                        'id' => 'commentform',
+                                                        'class' => 'comment-form',
+                                                        'route' => 'sites.reviews.store'
+                                                    ]) !!}
                                                         <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span>
                                                             Required fields are marked <span class="required">*</span>
                                                         </p>
@@ -946,25 +1000,14 @@
                                                                         class="required">*</span></label> <input
                                                                     id="email" name="email" type="email" value=""
                                                                     size="30" aria-required="true" required/></p>
-                                                        <p class="form-submit"><input name="submit" type="submit"
-                                                                                      id="submit" class="submit"
-                                                                                      value="Submit"/> <input
-                                                                    type='hidden' name='comment_post_ID' value='2779088'
-                                                                    id='comment_post_ID'/>
-                                                            <input type='hidden' name='comment_parent'
-                                                                   id='comment_parent' value='0'/>
+                                                        <p class="form-submit">
+                                                            <button id="submit" class="submit"> Submit</button>
                                                         </p>
-                                                        <p style="display: none;"><input type="hidden"
-                                                                                         id="akismet_comment_nonce"
-                                                                                         name="akismet_comment_nonce"
-                                                                                         value="01394007aa"/></p>
-                                                        <p style="display: none;"><input type="hidden" id="ak_js"
-                                                                                         name="ak_js" value="63"/></p>
-                                                    </form>
+                                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                                                    {!! Form::close() !!}
                                                 </div><!-- #respond -->
                                             </div>
                                         </div>
-
 
                                         <div class="clear"></div>
                                     </div>

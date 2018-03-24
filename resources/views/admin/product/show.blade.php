@@ -37,11 +37,11 @@
                             <br/>
 
                             <label class="checkbox-inline"><input type="checkbox" name="color1" value="black"
-                                        {{checkRadio('black', $colors) }}>Black</label>
+                                        {{checkRadio('Black', $colors) }}>Black</label>
                             <label class="checkbox-inline"><input type="checkbox" name="color2" value="white"
-                                        {{checkRadio('white', $colors)}}>White</label>
+                                        {{checkRadio('White', $colors)}}>White</label>
                             <label class="checkbox-inline"><input type="checkbox" name="color3" value="red"
-                                        {{checkRadio('red', $colors)}}>Red</label>
+                                        {{checkRadio('Red', $colors)}}>Red</label>
                         </div>
                         <div class="form-group">
                             <label for="sel1">Size:</label>

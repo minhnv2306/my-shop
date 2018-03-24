@@ -26,16 +26,12 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
-        dd($request->color);
         DB::beginTransaction();
         try {
             // Create product
             $data = $request->only([
                 'name',
                 'price',
-                'number',
-                'type',
-                'type',
                 'cotton',
                 'made',
                 'machine',
@@ -112,9 +108,6 @@ class ProductController extends Controller
             $data = $request->only([
                 'name',
                 'price',
-                'number',
-                'type',
-                'type',
                 'cotton',
                 'made',
                 'machine',

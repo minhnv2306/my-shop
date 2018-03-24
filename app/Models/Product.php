@@ -17,8 +17,8 @@ class Product extends Model
     public static function getMade()
     {
         return array(
-            'imported' => 'Imported',
-            'domestic' => 'Domestic',
+            'Imported' => 'Imported',
+            'Domestic' => 'Domestic',
         );
     }
     public static function getCotton()
@@ -32,9 +32,9 @@ class Product extends Model
     public static function getColor()
     {
         return array(
-            '1' => 'black',
-            '2' => 'white',
-            '3' => 'red',
+            '1' => 'Black',
+            '2' => 'White',
+            '3' => 'Red',
         );
     }
     public static function getDetailColor($key)

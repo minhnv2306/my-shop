@@ -26,16 +26,12 @@
                             <label for="price">Price ($):</label>
                             <input type="number" class="form-control" id="price" name="price" value="{{old('price')}}">
                         </div>
-                        <div class="form-group" style="width: 20%">
-                            <label for="price">Number:</label>
-                            <input type="number" class="form-control" id="price" name="number" value="{{old('number')}}">
-                        </div>
                         <div class="form-group">
                             <label for="sel1">Color:</label>
                             <br/>
-                            <label class="checkbox-inline"><input type="checkbox" name="color1" value="black"> Black</label>
-                            <label class="checkbox-inline"><input type="checkbox" name="color2" value="white"> White</label>
-                            <label class="checkbox-inline"><input type="checkbox" name="color3" value="red"> Red</label>
+                            <label class="checkbox-inline"><input type="checkbox" name="color1" value="Black"> Black</label>
+                            <label class="checkbox-inline"><input type="checkbox" name="color2" value="White"> White</label>
+                            <label class="checkbox-inline"><input type="checkbox" name="color3" value="Red"> Red</label>
                         </div>
                         <div class="form-group">
                             <label for="sel1">Size:</label>
@@ -45,17 +41,10 @@
                             <label class="checkbox-inline"><input type="checkbox" name="size3" value="L"> L</label>
                         </div>
                         <div class="form-group">
-                            <label for="sel1">Fit type:</label>
-                            <select class="form-control" id="sel1" name="type">
-                                <option value="man">Man</option>
-                                <option value="women">Women</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label for="sel1">Type:</label>
                             <select class="form-control" id="sel1" name="made">
-                                <option value="imported">Imported</option>
-                                <option value="domestic">Domestic</option>
+                                <option value="Imported">Imported</option>
+                                <option value="Domestic">Domestic</option>
                             </select>
                         </div>
                         <div class="form-group">
