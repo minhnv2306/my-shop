@@ -61,6 +61,10 @@ Route::group([ 'namespace' => 'Admin', 'prefix' => 'admin'], function()
         Route::get('users', 'UserController@index')->name('users.index');
 
         Route::resource('products', 'ProductController');
+
+        Route::resource('reviews', 'ReviewController');
+        Route::get('/approved/{review_id}' , 'ReviewController@approved')->name('reviews.approved');
+        Route::get('/hide/{review_id}' , 'ReviewController@hide')->name('reviews.hide');
     });
     Route::post('/login', 'UserController@login')->name('admin.login');
 });

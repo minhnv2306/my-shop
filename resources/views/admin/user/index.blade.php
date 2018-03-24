@@ -77,8 +77,4 @@
     </div>
 @endsection
 @section('script')
-
-    <script>
-        $('.data_table').DataTable();
-    </script>
 @endsection

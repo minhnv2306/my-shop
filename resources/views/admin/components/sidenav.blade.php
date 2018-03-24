@@ -36,6 +36,11 @@
                     <i class="fa fa-product-hunt"></i> <span>Product manager</span>
                 </a>
             </li>
+            <li class="treeview">
+                <a href="{{route('reviews.index')}}">
+                    <i class="fa fa-product-hunt"></i> <span>Rate manager</span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

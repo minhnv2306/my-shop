@@ -267,6 +267,11 @@
         toastr.error('{{session('error')}}')
     </script>
 @endif
+<script>
+    $('.data_table').DataTable({
+        "order": [0, 'desc'],
+    });
+</script>
 @yield('script')
 </body>
 </html>

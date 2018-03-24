@@ -15,7 +15,10 @@ class ProductController extends Controller
     {
         $colors = Product_color::where('product_id', $product->id)->get(['color_name']);
         $sizes = Product_size::where('product_id', $product->id)->get(['size']);
-        $reviews = Review::where('product_id', $product->id)->get();
+        $reviews = Review::where([
+            'product_id' => $product->id,
+            'approved' => 1
+        ])->get();
 
         return view('sites.product.show', [
             'product' => $product,
