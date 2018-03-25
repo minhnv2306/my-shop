@@ -7,6 +7,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="https://goatstee.com/xmlrpc.php">
     <meta name="google-site-verification" content="qY0zYEE7M5CSLC5qQka72up1VYMDTooYURCdOg9J3S4"/>
+    <input type="hidden" name="hash" id="hash" value="{{sha1('minh' . rand())}}"/>
 
     <script type="text/javascript">document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -622,6 +623,13 @@
 
 @include('sites.components.script')
 @yield('script')
+<script>
+    if (!localStorage.getItem("hash")) {
+        localStorage.setItem("hash", $('#hash').val());
+    } else {
+        $('#hash').val(localStorage.getItem("hash"));
+    }
+</script>
 </body>
 </html>
 

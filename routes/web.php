@@ -40,6 +40,8 @@ Route::group([ 'namespace' => 'Sites'], function()
 
     Route::post('/reviews/store', 'ReviewController@store')->name('sites.reviews.store');
 
+    Route::resource('carts', 'CartController');
+
     Route::group([ 'prefix' => 'users', 'middleware' => 'myauth'], function() {
         Route::get('/address', 'UserController@address')->name('user.address');
         Route::get('/create-billing-address', 'UserController@showBillingAddress')->name('user.show-billing-address');

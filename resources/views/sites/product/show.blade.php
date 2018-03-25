@@ -7,7 +7,7 @@
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="https://goatstee.com/xmlrpc.php">
     <meta name="google-site-verification" content="qY0zYEE7M5CSLC5qQka72up1VYMDTooYURCdOg9J3S4"/>
-
+    <input type="hidden" name="hash" id="hash" value="{{sha1('minh' . rand())}}"/>
     <script type="text/javascript">document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
     <title>{{$product->name}} - Goatstee</title>
     <style>
@@ -707,9 +707,12 @@
 
                                 </div>
 
-                                <form class="variations_form cart" method="post" enctype='multipart/form-data'
-                                      data-product_id="2779088" data-product_variations="false">
-
+                              
+                                {!! Form::open([
+                                    'method' => 'POST',
+                                    'route' => 'carts.store',
+                                    'class' => 'variations_form cart'
+                                ]) !!}
                                     <table class="variations" cellspacing="0">
                                         <tbody>
                                         <tr>
@@ -739,8 +742,8 @@
                                         <tr>
                                             <td class="label"><label for="fit-type">Fit Type</label></td>
                                             <td class="value">
-                                                <select id="fit-type" class="" name="attribute_fit-type"
-                                                        data-attribute_name="attribute_fit-type"
+                                                <select id="fit-type" class="" name="fit_type"
+                                                        data-attribute_name="fit_type"
                                                 data-show_option_none="yes">
                                                 <option value="">Choose an option</option>
                                                 <option value="men" selected='selected'>Men</option>
@@ -771,12 +774,12 @@
                                                        title="Qty" class="input-text qty text number_product" size="4" pattern="[0-9]*"
                                                        inputmode="numeric"/>
                                             </div>
-                                            <button type="submit" class="single_add_to_cart_button button alt">Add to
-                                                cart
+                                            <input type="hidden" name="hash_cart" value="" id="hash_cart">
+                                            <input type="hidden" id="price_cart" value="{{$product->price}}" name="price_cart">
+                                            <input type="hidden" name="product_id" value="{{$product->id}}">
+                                            <button type="submit" class="single_add_to_cart_button button alt" id="add_cart">
+                                                Add to cart
                                             </button>
-                                            <input type="hidden" name="add-to-cart" value="2779088"/>
-                                            <input type="hidden" name="product_id" value="2779088"/>
-                                            <input type="hidden" name="variation_id" class="variation_id" value="0"/>
                                         </div>
                                     </div>
 
@@ -1044,7 +1047,7 @@
                                                     <p class="form-submit">
                                                         <button id="submit" class="submit"> Submit</button>
                                                     </p>
-                                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+
                                                     {!! Form::close() !!}
                                                 </div><!-- #respond -->
                                             </div>
@@ -1361,12 +1364,20 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
+        if (!localStorage.getItem("hash")) {
+            localStorage.setItem("hash", $('#hash').val());
+        } else {
+            $('#hash').val(localStorage.getItem("hash"));
+        }
         $('.number_product').change(function () {
             var price = $('#price').val();
             var number_product = $('.number_product').val();
             var total_price = price * number_product;
+            console.log(total_price);
+            $('#price_cart').val(total_price);
             $('.total_price').html('<span class="woocommerce-Price-amount amount"><span class="woocommerce-Price-currencySymbol">$ </span>' + total_price + '</span>');
         })
+        $('#hash_cart').val($('#hash').val());
     })
 </script>
 

@@ -18,7 +18,11 @@ class ProductController extends Controller
         $sizes = Product_size::where('product_id', $product->id)->get(['size']);
         $reviews = Review::getReviews($product->id, null, 1);
 
-        $reviews_waiting = Review::getReviews($product->id, Auth::user()->email, 0);
+        if (Auth::check()) {
+            $reviews_waiting = Review::getReviews($product->id, Auth::user()->email, 0);
+        } else {
+            $reviews_waiting = array();
+        }
         return view('sites.product.show', [
             'product' => $product,
             'colors' => $colors,
