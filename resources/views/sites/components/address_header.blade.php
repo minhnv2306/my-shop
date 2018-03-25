@@ -7,9 +7,6 @@
         <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
             <a href="#">Orders</a>
         </li>
-        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-            <a href="#">Downloads</a>
-        </li>
         <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address is-active">
             <a href="{{route('user.address')}}">Addresses</a>
         </li>
