@@ -630,6 +630,11 @@
         $('#hash').val(localStorage.getItem("hash"));
     }
 </script>
+<script>
+    $.ajax({url: "/getNumberProduct/" + localStorage.getItem("hash"), success: function(result){
+            $('.count').html(result);
+        }});
+</script>
 </body>
 </html>
 

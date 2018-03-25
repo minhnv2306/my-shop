@@ -8,4 +8,9 @@ class Product_cart extends Model
 {
     protected $guarded = ['id'];
     public $table = 'product_cart';
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

@@ -33,6 +33,8 @@ Route::group([ 'namespace' => 'Sites'], function()
     Route::get('/my-account', 'HomeController@myAccount')->name('sites.my-account');
     Route::get('/cart', 'HomeController@cart')->name('sites.cart');
 
+    Route::get('getNumberProduct/{hash}', 'CartController@getNumberProduct');
+
     Route::get('/logout', 'UserController@logout');
     Route::post('/loginSite', 'UserController@login')->name('sites.login');
 
@@ -41,6 +43,7 @@ Route::group([ 'namespace' => 'Sites'], function()
     Route::post('/reviews/store', 'ReviewController@store')->name('sites.reviews.store');
 
     Route::resource('carts', 'CartController');
+    Route::get('my-cart', 'CartController@showMyCart')->name('carts.showMyCart');
 
     Route::group([ 'prefix' => 'users', 'middleware' => 'myauth'], function() {
         Route::get('/address', 'UserController@address')->name('user.address');

@@ -17,7 +17,7 @@
                     <a href="#">Checkout</a></li>
                 <li id="menu-item-17"
                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17">
-                    <a href="#">Cart</a></li>
+                    <a href="{{route('carts.showMyCart')}}">Cart</a></li>
             </ul>
         </div>
     </div><!-- .container -->
@@ -52,7 +52,7 @@
 					<a class="cart-contents" href="https://goatstee.com/cart/" title="View your shopping cart">
 		<span class="total">&#036;179.50</span>
 		<i class="fa fa-shopping-cart"></i>
-		<span class="count">10</span>
+		<span class="count"></span>
 	</a>
 				</span>
             <div class="widget woocommerce widget_shopping_cart">
