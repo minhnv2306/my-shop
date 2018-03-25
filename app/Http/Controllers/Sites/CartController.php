@@ -64,22 +64,31 @@ class CartController extends Controller
         if (!empty($cart)) {
             session(['hash_cart' => $cart->hash_cart]);
             $count = count(Product_cart::where('cart_id', $cart->id)->get());
+            $total_price = $cart->price;
         } else {
             $count = 0;
+            $total_price = 0;
         }
-        return $count;
+        return view('sites.cart.header', [
+            'count' => $count,
+            'total_price' => $total_price
+        ]);
     }
     public function showMyCart(Request $request)
     {
-        $cart = Cart::where('hash_cart', session('hash_cart'))->first();
+        $cart = Cart::where('hash_cart', $request->hash)->first();
         if (!empty($cart)) {
             $product_cart = Product_cart::where('cart_id', $cart->id)->get();
         } else {
             $product_cart = array();
         }
-        return view('sites.cart.show', [
+        return view('sites.cart.my-cart', [
             'product_carts' => $product_cart,
             'total_price' => empty($cart) ? 0 : $cart->price,
         ]);
+    }
+    public function getMyCart()
+    {
+        return view('sites.cart.show');
     }
 }

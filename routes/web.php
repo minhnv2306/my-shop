@@ -43,7 +43,8 @@ Route::group([ 'namespace' => 'Sites'], function()
     Route::post('/reviews/store', 'ReviewController@store')->name('sites.reviews.store');
 
     Route::resource('carts', 'CartController');
-    Route::get('my-cart', 'CartController@showMyCart')->name('carts.showMyCart');
+    Route::get('my-cart', 'CartController@getMyCart')->name('carts.showMyCart');
+    Route::get('show-my-cart/{hash}', 'CartController@showMyCart');
 
     Route::group([ 'prefix' => 'users', 'middleware' => 'myauth'], function() {
         Route::get('/address', 'UserController@address')->name('user.address');

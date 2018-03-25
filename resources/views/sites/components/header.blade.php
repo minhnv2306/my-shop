@@ -48,16 +48,7 @@
         </div>
 
         <div class="header-cart">
-			<span>
-					<a class="cart-contents" href="https://goatstee.com/cart/" title="View your shopping cart">
-		<span class="total">&#036;179.50</span>
-		<i class="fa fa-shopping-cart"></i>
-		<span class="count"></span>
-	</a>
-				</span>
-            <div class="widget woocommerce widget_shopping_cart">
-                <div class="widget_shopping_cart_content"></div>
-            </div>
+
         </div>
 
     </div><!-- .container -->

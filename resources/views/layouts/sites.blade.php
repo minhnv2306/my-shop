@@ -10,7 +10,7 @@
     <input type="hidden" name="hash" id="hash" value="{{sha1('minh' . rand())}}"/>
 
     <script type="text/javascript">document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{asset('/js/goatstee/jquery.min.js')}}"></script>
     <title>@yield('title') - Goatstee</title>
     <style>
         .wishlist_table .add_to_cart, a.add_to_wishlist.button.alt {
@@ -131,13 +131,12 @@
     <link rel='stylesheet' id='shopy-custom-fonts-css'
           href='//fonts.googleapis.com/css?family=Nunito%3Aregular%2C700%2C300%7CKameron%3Aregular%2C700%26subset%3Dlatin%2C'
           type='text/css' media='all'/>
-    <script type='text/javascript' src='https://goatstee.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
     <script type='text/javascript'
-            src='https://goatstee.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+            src='/js/goatstee/jquery-migrate.min.js?ver=1.4.1'></script>
     <script type='text/javascript'
-            src='https://goatstee.com/wp-content/plugins/woocommerce-product-image-flipper/assets/js/script.js?ver=4.6.10'></script>
+            src='/js/goatstee/script.js?ver=4.6.10'></script>
     <script type='text/javascript'
-            src='https://goatstee.com/wp-content/plugins/yith-woocommerce-order-tracking/assets/js/jquery.tooltipster.min.js?ver=4.6.10'></script>
+            src='/js/goatstee/jquery.tooltipster.min.js?ver=4.6.10'></script>
     <script type='text/javascript'>
         /* <![CDATA[ */
         var ywot = {"p": ""};
@@ -145,7 +144,7 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script type='text/javascript'
-            src='https://goatstee.com/wp-content/plugins/yith-woocommerce-order-tracking/assets/js/ywot.js?ver=4.6.10'></script>
+            src='/js/goatstee/ywot.js?ver=4.6.10'></script>
     <link rel='https://api.w.org/' href='https://goatstee.com/wp-json/'/>
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://goatstee.com/xmlrpc.php?rsd"/>
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://goatstee.com/wp-includes/wlwmanifest.xml"/>
@@ -632,7 +631,7 @@
 </script>
 <script>
     $.ajax({url: "/getNumberProduct/" + localStorage.getItem("hash"), success: function(result){
-            $('.count').html(result);
+            $('.header-cart').html(result);
         }});
 </script>
 </body>

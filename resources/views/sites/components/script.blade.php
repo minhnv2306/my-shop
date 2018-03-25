@@ -1,5 +1,4 @@
-<!-- Google Code for Goatstee Conversion Page -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/d07b1474/cloudflare-static/email-decode.min.js"></script>
+<!-- Google Code for Goatstee Conversion Page
 <script type="text/javascript">
     /* <![CDATA[ */
     var google_conversion_id = 925280851;
@@ -12,18 +11,17 @@
     var google_remarketing_only = false;
     /* ]]> */
 </script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
+-->
 <noscript>
     <div style="display:inline;">
         <img height="1" width="1" style="border-style:none;" alt=""
              src="//www.googleadservices.com/pagead/conversion/925280851/?value=18.00&amp;currency_code=USD&amp;label=gGKGCOSW9nMQ09SauQM&amp;guid=ON&amp;script=0"/>
     </div>
 </noscript>
-<!-- Google Code dành cho Thẻ tiếp thị lại -->
+<!-- Google Code dành cho Thẻ tiếp thị lại
 <!--------------------------------------------------
 Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng cá nhân hay đặt thẻ tiếp thị lại trên các trang có liên quan đến danh mục nhạy cảm. Xem thêm thông tin và hướng dẫn về cách thiết lập thẻ trên: http://google.com/ads/remarketingsetup
---------------------------------------------------->
+---------------------------------------------------
 <script type="text/javascript">
     var google_tag_params = {
         ecomm_prodid: 'REPLACE_WITH_VALUE',
@@ -40,6 +38,7 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
 </script>
 <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
 </script>
+-->
 <noscript>
     <div style="display:inline;">
         <img height="1" width="1" style="border-style:none;" alt=""
@@ -47,30 +46,18 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
     </div>
 </noscript>
 <script>document.documentElement.className = 'js';</script>
-<script type="text/javascript">/* <![CDATA[ */
-    jQuery(document).ready(function () {
-        jQuery.post("https://goatstee.com/wp-admin/admin-ajax.php", {
-            action: "entry_views",
-            _ajax_nonce: "49c39a9a7c",
-            post_id: 440
-        });
-    });
-    /* ]]> */</script>
-<script type='text/javascript'
-        src='https://goatstee.com/wp-content/plugins/contact-form-7/includes/js/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
+<script type='text/javascript' src='/js/goatstee/jquery.form.min.js?ver=3.51.0-2014.06.20'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var _wpcf7 = {"recaptcha": {"messages": {"empty": "Please verify that you are not a robot."}}, "cached": "1"};
     /* ]]> */
 </script>
-<script type='text/javascript'
-        src='https://goatstee.com/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=4.7'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-includes/js/jquery/ui/core.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-includes/js/jquery/ui/widget.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-includes/js/jquery/ui/accordion.min.js?ver=1.11.4'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-includes/js/jquery/ui/tabs.min.js?ver=1.11.4'></script>
-<script type='text/javascript'
-        src='https://goatstee.com/wp-content/plugins/theme-junkie-shortcodes/assets/js/junkie-shortcodes.js'></script>
+<script type='text/javascript' src='/js/goatstee/scripts.js?ver=4.7'></script>
+<script type='text/javascript' src='/js/goatstee/jquery-ui/core.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='/js/goatstee/jquery-ui/widget.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='/js/goatstee/jquery-ui/accordion.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='/js/goatstee/jquery-ui/tabs.min.js?ver=1.11.4'></script>
+<script type='text/javascript' src='/js/goatstee/junkie-shortcodes.js'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var wc_add_to_cart_params = {
@@ -83,19 +70,15 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
     };
     /* ]]> */
 </script>
-<script type='text/javascript'
-        src='//goatstee.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=2.6.7'></script>
-<script type='text/javascript'
-        src='//goatstee.com/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.70'></script>
+<script type='text/javascript' src='/js/goatstee/add-to-cart.min.js?ver=2.6.7'></script>
+<script type='text/javascript' src='/js/goatstee/jquery.blockUI.min.js?ver=2.70'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var woocommerce_params = {"ajax_url": "\/wp-admin\/admin-ajax.php", "wc_ajax_url": "\/?wc-ajax=%%endpoint%%"};
     /* ]]> */
 </script>
-<script type='text/javascript'
-        src='//goatstee.com/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=2.6.7'></script>
-<script type='text/javascript'
-        src='//goatstee.com/wp-content/plugins/woocommerce/assets/js/jquery-cookie/jquery.cookie.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='/js/goatstee/woocommerce.min.js?ver=2.6.7'></script>
+<script type='text/javascript' src='/js/goatstee/jquery.cookie.min.js?ver=1.4.1'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var wc_cart_fragments_params = {
@@ -105,14 +88,10 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
     };
     /* ]]> */
 </script>
-<script type='text/javascript'
-        src='//goatstee.com/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=2.6.7'></script>
-<script type='text/javascript'
-        src='//goatstee.com/wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.min.js?ver=3.1.5'></script>
-<script type='text/javascript'
-        src='//goatstee.com/wp-content/plugins/woocommerce/assets/js/prettyPhoto/jquery.prettyPhoto.init.min.js?ver=2.6.7'></script>
-<script type='text/javascript'
-        src='https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.selectBox.min.js?ver=1.2.0'></script>
+<script type='text/javascript' src='/js/goatstee/cart-fragments.min.js?ver=2.6.7'></script>
+<script type='text/javascript' src='/js/goatstee/jquery.prettyPhoto.min.js?ver=3.1.5'></script>
+<script type='text/javascript' src='/js/goatstee/jquery.prettyPhoto.init.min.js?ver=2.6.7'></script>
+<script type='text/javascript' src='/js/goatstee/jquery.selectBox.min.js?ver=1.2.0'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var yith_wcwl_l10n = {
@@ -136,10 +115,7 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
     };
     /* ]]> */
 </script>
-<script type='text/javascript'
-        src='https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/js/jquery.yith-wcwl.js?ver=2.0.16'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-includes/js/imagesloaded.min.js?ver=3.2.0'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-includes/js/masonry.min.js?ver=3.3.2'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-content/themes/shopy/assets/js/shopy.min.js'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type='text/javascript' src='/js/goatstee/jquery.yith-wcwl.js?ver=2.0.16'></script>
+<script type='text/javascript' src='/js/goatstee/imagesloaded.min.js?ver=3.2.0'></script>
+<script type='text/javascript' src='/js/goatstee/masonry.min.js?ver=3.3.2'></script>
+<script type='text/javascript' src='/js/goatstee/wp-embed.min.js?ver=4.6.10'></script>
