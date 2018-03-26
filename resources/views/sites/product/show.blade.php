@@ -720,7 +720,7 @@
                                                 <option value="">Choose an option</option>
                                                 <option value="men" selected='selected'>Men</option>
                                                 <option value="women">Women</option>
-                                                </select><a class="reset_variations" href="#">Clear</a>
+                                                </select>
                                             </td>
                                             <input type="hidden" value="{{$product->price}}" id="price">
                                         </tr>
@@ -1325,9 +1325,26 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
 <script type='text/javascript' src='/js/goatstee/product/underscore.min.js?ver=1.8.3'></script>
 <script type='text/javascript' src='/js/goatstee/product/single-product.min.js?ver=2.6.7'></script>
 <script>
-    $.ajax({url: "/getNumberProduct/" + localStorage.getItem("hash"), success: function(result){
-            $('.header-cart').html(result);
-        }});
+
+    $(document).ready(function() {
+        $.ajax({url: "/getNumberProduct/" + localStorage.getItem("hash"), success: function(result){
+                $('.header-cart').html(result);
+            }});
+        $('#add_cart').click(function (e) {
+            if (! $('#color').val()) {
+                alert("Please choose color of product!");
+                e.preventDefault();
+            }
+            if (! $('#size').val()) {
+                alert("Please choose size of product!");
+                e.preventDefault();
+            }
+            if (! $('#fit-type').val()) {
+                alert("Please choose fit type of product!");
+                e.preventDefault();
+            }
+        })
+    })
 </script>
 </body>
 </html>

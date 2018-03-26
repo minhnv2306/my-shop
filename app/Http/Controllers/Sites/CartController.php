@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Sites;
 
 use App\Models\Cart;
+use App\Models\Product;
 use App\Models\Product_cart;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -52,7 +53,8 @@ class CartController extends Controller
                 ]);
             }
             DB::commit();
-            return redirect()->route('home');
+            $messages = (empty(Product::find($request->product_id)) ? '' : Product::find($request->product_id)->name) . ' has been added to your cart.';
+            return redirect()->route('carts.showMyCart')->with('messages', $messages);
         } catch (Exception $ex) {
             DB::rollback();
             dd($ex->getMessage());
@@ -90,5 +92,33 @@ class CartController extends Controller
     public function getMyCart()
     {
         return view('sites.cart.show');
+    }
+    public function deleteProductOfCart($product_cart_id, $cart_id)
+    {
+        DB::beginTransaction();
+        try {
+            $product_cart = Product_cart::where([
+                'id' => $product_cart_id,
+                'cart_id' => $cart_id,
+            ])->first();
+            $cart = Cart::find($cart_id);
+            if (! empty($product_cart) && ! empty($cart)) {
+                $product_cart->delete();
+                $new_price = $cart->price - $product_cart->price;
+                $cart->update([
+                    'price' => $new_price
+                ]);
+                $messages = (empty(Product::find($product_cart->product_id)) ? '' : Product::find($product_cart->product_id)->name) . ' removed.';
+                DB::commit();
+                return redirect()->route('carts.showMyCart')->with('messages', $messages);
+            } else {
+                DB::rollback();
+                return view('errors.404');
+            }
+
+        } catch (Exception $ex) {
+            DB::rollback();
+            return view('errors.404');
+        }
     }
 }

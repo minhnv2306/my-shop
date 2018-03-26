@@ -11,7 +11,17 @@
 
                     <article id="post-11" class="post-11 page type-page status-publish hentry no-post-thumbnail entry"
                              itemscope="itemscope" itemtype="http://schema.org/CreativeWork">
+                        <h1 class="page-title" itemprop="headline">Cart</h1>
+                        @if(!empty(session('messages')))
+                            <div class="entry-content" itemprop="text">
+                                <div class="woocommerce">
+                                    <div class="woocommerce-message"><a href="{{route('home')}}" class="button wc-forward">Continue Shopping</a> {{session('messages')}}</div>
+                                </div>
+                            </div>
+                        @endif
 
+                        <div class="entry-content" itemprop="text" id="my-cart-content">
+                        </div>
                     </article><!-- #post-## -->
                 </main><!-- #main -->
             </div><!-- #primary -->
@@ -25,7 +35,7 @@
 @section('script')
     <script>
         $.ajax({url: "/show-my-cart/" + localStorage.getItem("hash"), success: function(result){
-                $('#post-11').html(result);
+                $('#my-cart-content').html(result);
             }});
     </script>
 @endsection
