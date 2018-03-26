@@ -612,8 +612,9 @@
                         </nav>
 
                         <h1 class="page-title">Search Results: &ldquo;{{$key}}&rdquo;</h1>
-
-
+                        @if(count($products) == 0)
+                        <p class="woocommerce-info">No products were found matching your selection.</p>
+                        @else
                         <div class="shopy-sorting">
                             <form class="woocommerce-ordering" method="get">
                                 <select name="orderby" class="orderby">
@@ -678,6 +679,7 @@
                                 {!! $links !!}
                             </nav>
                         </div>
+                        @endif
 
                     </main><!-- #main -->
                 </div><!-- #primary -->
