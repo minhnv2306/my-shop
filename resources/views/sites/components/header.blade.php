@@ -37,11 +37,10 @@
         </div>
 
         <div class="search-area">
-            <form method="get" class="searchform" id="search-product-form" action="https://goatstee.com/">
+            <form method="get" class="searchform" id="search-product-form" action="{{route('search')}}">
                 <div>
                     <input type="text" class="textfield" name="s" id="s"
                            placeholder="Type the keyword to search &hellip;">
-                    <input type="hidden" name="post_type" value="product"/>
                     <button type="submit"><i class="fa fa-search"></i></button>
                 </div>
             </form>

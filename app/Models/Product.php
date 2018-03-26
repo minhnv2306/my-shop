@@ -14,6 +14,12 @@ class Product extends Model
             'women' => 'Women',
         );
     }
+    public static function getBaseList($param = array())
+    {
+        $query = self::select('*')
+            ->orderBy('id', 'desc');
+        return $query;
+    }
     public static function getMade()
     {
         return array(
@@ -60,5 +66,11 @@ class Product extends Model
             return $sizes[$key];
         }
         return '';
+    }
+    public static function search($key)
+    {
+        return self::getBaseList()
+            ->where('name', 'like', '%' . $key . '%')
+            ->paginate(3);
     }
 }

@@ -17,7 +17,7 @@ class UserController extends Controller
     public function login(LoginAdminRequest $request)
     {
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 1])) {
-            return redirect()->route('admin.index');
+            return redirect('/home');
         } else {
             return redirect()->back()->withErrors('Username or password is not correct!');
         }

@@ -36,6 +36,7 @@ Route::group([ 'namespace' => 'Sites'], function()
     Route::get('/return-and-refund-policy', 'HomeController@policyRefund')->name('policy.refund');
     Route::get('/privace-policy', 'HomeController@policyPrivace')->name('policy.privace');
     Route::get('terms-of-service', 'HomeController@policyConditions')->name('policy.conditions');
+    Route::get('search', 'SearchController@index')->name('search');
 
     Route::get('getNumberProduct/{hash}', 'CartController@getNumberProduct');
 

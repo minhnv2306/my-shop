@@ -28,39 +28,6 @@
                                                data-quantity="1"
                                                class="button add_to_cart_button product_type_variable"><i
                                                     class="fa fa-shopping-cart"></i></a>
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2779250">
-                                            <div class="yith-wcwl-add-button show" style="display:block">
-
-
-                                                <a href="/?add_to_wishlist=2779250" rel="nofollow"
-                                                   data-product-id="2779250" data-product-type="variable"
-                                                   class="add_to_wishlist">
-                                                    Add to Wishlist</a>
-                                                <img src="https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
-                                                     class="ajax-loading" alt="loading" width="16" height="16"
-                                                     style="visibility:hidden"/>
-                                            </div>
-                                            <!--
-
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="https://goatstee.com/product/i-am-a-taurus-woman-funny-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="https://goatstee.com/product/i-am-a-taurus-woman-funny-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div> -->
-
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                                        </div>
-
                                         <div class="clear"></div>
                                     </li>
                                 @endif
@@ -78,38 +45,6 @@
                                                data-quantity="1"
                                                class="button add_to_cart_button product_type_variable"><i
                                                     class="fa fa-shopping-cart"></i></a>
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2779088">
-                                            <div class="yith-wcwl-add-button show" style="display:block">
-
-
-                                                <a href="/?add_to_wishlist=2779088" rel="nofollow"
-                                                   data-product-id="2779088" data-product-type="variable"
-                                                   class="add_to_wishlist">
-                                                    Add to Wishlist</a>
-                                                <img src="https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
-                                                     class="ajax-loading" alt="loading" width="16" height="16"
-                                                     style="visibility:hidden"/>
-                                            </div>
-                                            <!--
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="https://goatstee.com/product/armed-forces-day-honor-their-sacrifice-military-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="https://goatstee.com/product/armed-forces-day-honor-their-sacrifice-military-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div> -->
-
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                                        </div>
-
                                         <div class="clear"></div>
                                     </li>
                                 @endif
@@ -127,38 +62,6 @@
                                                data-quantity="1"
                                                class="button add_to_cart_button product_type_variable"><i
                                                     class="fa fa-shopping-cart"></i></a>
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2778926">
-                                            <div class="yith-wcwl-add-button hide" style="display:none">
-
-
-                                                <a href="/?add_to_wishlist=2778926" rel="nofollow"
-                                                   data-product-id="2778926" data-product-type="variable"
-                                                   class="add_to_wishlist">
-                                                    Add to Wishlist</a>
-                                                <img src="https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
-                                                     class="ajax-loading" alt="loading" width="16" height="16"
-                                                     style="visibility:hidden"/>
-                                            </div>
-                                            <!--
-
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="https://goatstee.com/product/zombie-jesus-day-easter-tshirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistexistsbrowse show" style="display:block">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="https://goatstee.com/product/zombie-jesus-day-easter-tshirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div> -->
-
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                                        </div>
 
                                         <div class="clear"></div>
                                     </li>
@@ -178,38 +81,6 @@
                                                data-quantity="1"
                                                class="button add_to_cart_button product_type_variable"><i
                                                     class="fa fa-shopping-cart"></i></a>
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2779007">
-                                            <div class="yith-wcwl-add-button hide" style="display:none">
-
-
-                                                <a href="/?add_to_wishlist=2779007" rel="nofollow"
-                                                   data-product-id="2779007" data-product-type="variable"
-                                                   class="add_to_wishlist">
-                                                    Add to Wishlist</a>
-                                                <img src="https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
-                                                     class="ajax-loading" alt="loading" width="16" height="16"
-                                                     style="visibility:hidden"/>
-                                            </div>
-                                            <!--
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="https://goatstee.com/product/im-the-juan-for-you-funny-cinco-de-mayo-saying-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistexistsbrowse show" style="display:block">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="https://goatstee.com/product/im-the-juan-for-you-funny-cinco-de-mayo-saying-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div> -->
-
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                                        </div>
-
                                         <div class="clear"></div>
                                     </li>
                                 @endif
@@ -240,37 +111,6 @@
                                                data-quantity="1"
                                                class="button add_to_cart_button product_type_variable"><i
                                                     class="fa fa-shopping-cart"></i></a>
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2693694">
-                                            <div class="yith-wcwl-add-button show" style="display:block">
-
-
-                                                <a href="/?add_to_wishlist=2693694" rel="nofollow"
-                                                   data-product-id="2693694" data-product-type="variable"
-                                                   class="add_to_wishlist">
-                                                    Add to Wishlist</a>
-                                                <img src="https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
-                                                     class="ajax-loading" alt="loading" width="16" height="16"
-                                                     style="visibility:hidden"/>
-                                            </div>
-                                            <!--
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="https://goatstee.com/product/total-solar-eclipse-summer-august-21st-2017-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="https://goatstee.com/product/total-solar-eclipse-summer-august-21st-2017-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div> -->
-
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                                        </div>
 
                                         <div class="clear"></div>
                                     </li>
@@ -290,38 +130,6 @@
                                                data-quantity="1"
                                                class="button add_to_cart_button product_type_variable"><i
                                                     class="fa fa-shopping-cart"></i></a>
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-2293410">
-                                            <div class="yith-wcwl-add-button hide" style="display:none">
-
-
-                                                <a href="/?add_to_wishlist=2293410" rel="nofollow"
-                                                   data-product-id="2293410" data-product-type="variable"
-                                                   class="add_to_wishlist">
-                                                    Add to Wishlist</a>
-                                                <img src="https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
-                                                     class="ajax-loading" alt="loading" width="16" height="16"
-                                                     style="visibility:hidden"/>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="https://goatstee.com/product/catholics-vs-convicts-on-back-1988-classic-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistexistsbrowse show" style="display:block">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="https://goatstee.com/product/catholics-vs-convicts-on-back-1988-classic-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div>
-
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                                        </div>
-
                                         <div class="clear"></div>
                                     </li>
                                 @endif
@@ -341,39 +149,6 @@
                                                data-quantity="1"
                                                class="button add_to_cart_button product_type_variable"><i
                                                     class="fa fa-shopping-cart"></i></a>
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-952080">
-                                            <div class="yith-wcwl-add-button show" style="display:block">
-
-
-                                                <a href="/?add_to_wishlist=952080" rel="nofollow"
-                                                   data-product-id="952080" data-product-type="variable"
-                                                   class="add_to_wishlist">
-                                                    Add to Wishlist</a>
-                                                <img src="https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
-                                                     class="ajax-loading" alt="loading" width="16" height="16"
-                                                     style="visibility:hidden"/>
-                                            </div>
-                                            <!--
-
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="https://goatstee.com/product/donald-j-trump-president-inauguration-day-2017-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="https://goatstee.com/product/donald-j-trump-president-inauguration-day-2017-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div> -->
-
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                                        </div>
-
                                         <div class="clear"></div>
                                     </li>
                                 @endif
@@ -393,37 +168,6 @@
                                                data-quantity="1"
                                                class="button add_to_cart_button product_type_variable"><i
                                                     class="fa fa-shopping-cart"></i></a>
-                                        <div class="yith-wcwl-add-to-wishlist add-to-wishlist-76717">
-                                            <div class="yith-wcwl-add-button show" style="display:block">
-
-
-                                                <a href="/?add_to_wishlist=76717" rel="nofollow" data-product-id="76717"
-                                                   data-product-type="variable" class="add_to_wishlist">
-                                                    Add to Wishlist</a>
-                                                <img src="https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/images/wpspin_light.gif"
-                                                     class="ajax-loading" alt="loading" width="16" height="16"
-                                                     style="visibility:hidden"/>
-                                            </div>
-                                            <!--
-
-                                            <div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
-                                                <span class="feedback">Product added!</span>
-                                                <a href="https://goatstee.com/product/s-mi-le-t-shirt-mo-re-roman-atwood-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div>
-
-                                            <div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
-                                                <span class="feedback">The product is already in the wishlist!</span>
-                                                <a href="https://goatstee.com/product/s-mi-le-t-shirt-mo-re-roman-atwood-t-shirt/view/"
-                                                   rel="nofollow">
-                                                    Browse Wishlist </a>
-                                            </div> -->
-
-                                            <div style="clear:both"></div>
-                                            <div class="yith-wcwl-wishlistaddresponse"></div>
-
-                                        </div>
 
                                         <div class="clear"></div>
                                     </li>
