@@ -41,6 +41,7 @@
     <link rel='dns-prefetch' href='//fonts.googleapis.com'/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel='stylesheet' id='shopy-custom-fonts-css'  href='//fonts.googleapis.com/css?family=Nunito%3Aregular%2C700%2C300%7CKameron%3Aregular%2C700%26subset%3Dlatin%2C' type='text/css' media='all' />
     <link rel='dns-prefetch' href='//s.w.org'/>
     <link rel="alternate" type="application/rss+xml" title="Goatstee &raquo; Feed" href="https://goatstee.com/feed/"/>
     <link rel="alternate" type="application/rss+xml" title="Goatstee &raquo; Comments Feed"
@@ -112,18 +113,13 @@
     <link rel='stylesheet' id='contact-form-7-css' href='/css/goatstee/styles.css?ver=4.7' type='text/css' media='all'/>
     <link rel='stylesheet' id='junkie-shortcodes-css' href='/css/goatstee/junkie-shortcodes.css?ver=4.6.10' type='text/css' media='all'/>
     <link rel='stylesheet' id='pif-styles-css' href='/css/goatstee/style.css?ver=4.6.10' type='text/css' media='all'/>
-    <link rel='stylesheet' id='ywot_style-css' href='/css/goatstee/ywot_style.css?ver=4.6.10' type='text/css' media='all'/>
     <link rel='stylesheet' id='woocommerce_prettyPhoto_css-css' href='/css/goatstee/prettyPhoto.css?ver=3.1.6' type='text/css' media='all'/>
+    <link rel='stylesheet' id='ywot_style-css' href='/css/goatstee/ywot_style.css?ver=4.6.10' type='text/css' media='all'/>
     <link rel='stylesheet' id='jquery-selectBox-css' href='/css/goatstee/jquery.selectBox.css?ver=1.2.0' type='text/css' media='all'/>
     <link rel='stylesheet' id='yith-wcwl-main-css' href='/css/goatstee/style1.css?ver=2.0.16' type='text/css' media='all'/>
-    <link rel='stylesheet' id='yith-wcwl-font-awesome-css'
-          href='https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.min.css?ver=4.3.0'
-          type='text/css' media='all'/>
     <link rel='stylesheet' id='shopy-plugins-style-css' href='/css/goatstee/plugins.min.css?ver=4.6.10' type='text/css' media='all'/>
     <link rel='stylesheet' id='shopy-style-css' href='/css/goatstee/shopy/style.min.css?ver=4.6.10' type='text/css' media='all'/>
-    <link rel='stylesheet' id='shopy-custom-fonts-css'
-          href='//fonts.googleapis.com/css?family=Nunito%3Aregular%2C700%2C300%7CKameron%3Aregular%2C700%26subset%3Dlatin%2C'
-          type='text/css' media='all'/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type='text/javascript' src='/js/goatstee/jquery-migrate.min.js?ver=1.4.1'></script>
     <script type='text/javascript' src='/js/goatstee/script.js?ver=4.6.10'></script>
     <script type='text/javascript' src='/js/goatstee/jquery.tooltipster.min.js?ver=4.6.10'></script>
@@ -596,7 +592,6 @@
     </style>
     <!-- End Custom CSS -->
     <!--[if lte IE 9]>
-    <script src="https://goatstee.com/wp-content/themes/shopy/assets/js/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 
@@ -1049,23 +1044,7 @@
             </div><!-- .container -->
         </div><!-- #content -->
 
-        <div class="spotlight">
-            <div class="container">
-                <div class="spotlight-items">
-                    <div class="spotlight-item"><i class="fa fa-thumbs-up" aria-hidden="true"></i>
-                        <h3>100% STATICFACTION</h3>
-                        <p>Don&#039;t like your print? Sent it back.</p></div>
-                    <div class="spotlight-item"><i class="fa fa-truck" aria-hidden="true"></i>
-                        <h3>GET FREE SHIPPING</h3>
-                        <p>Free shipping for order over $49.99
-                            (*Domestic Orders Only)</p></div>
-                    <div class="spotlight-item"><i class="fa fa-lock" aria-hidden="true"></i>
-                        <h3>SECURE SHOPPING</h3>
-                        <p>Shop with confidence. </p></div>
-                </div>
-            </div>
-        </div>
-        <footer id="colophon" class="site-footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+        @include('sites.components.footer')
 
 
             <div id="tertiary" class="footer-widget" role="complementary" aria-label="Footer Sidebar"
@@ -1304,8 +1283,6 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
 <script type='text/javascript' src='/js/goatstee/imagesloaded.min.js?ver=3.2.0'></script>
 <script type='text/javascript' src='/js/goatstee/masonry.min.js?ver=3.3.2'></script>
 <script type='text/javascript' src='/js/goatstee/wp-embed.min.js?ver=4.6.10'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-includes/js/comment-reply.min.js?ver=4.6.10'></script>
-<script type='text/javascript' src='https://goatstee.com/wp-includes/js/underscore.min.js?ver=1.8.3'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var _wpUtilSettings = {"ajax": {"url": "\/wp-admin\/admin-ajax.php"}};
@@ -1342,12 +1319,16 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
         $('#hash_cart').val($('#hash').val());
     })
 </script>
-
-</body>
-</html>
-
 <!-- Page generated by LiteSpeed Cache 1.9.1.1 on 2018-03-23 16:56:22 -->
 
 <script type='text/javascript' src='/js/goatstee/product/comment-reply.min.js?ver=4.6.10'></script>
 <script type='text/javascript' src='/js/goatstee/product/underscore.min.js?ver=1.8.3'></script>
 <script type='text/javascript' src='/js/goatstee/product/single-product.min.js?ver=2.6.7'></script>
+<script>
+    $.ajax({url: "/getNumberProduct/" + localStorage.getItem("hash"), success: function(result){
+            $('.header-cart').html(result);
+        }});
+</script>
+</body>
+</html>
+

@@ -20,3 +20,11 @@
 		</div>
 	</div>
 @endsection
+@section('scripts')
+	@parent
+	<script>
+        $(document).ready(function () {
+            $('#dashboard').addClass('active');
+        })
+	</script>
+@endsection
