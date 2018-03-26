@@ -32,6 +32,10 @@ Route::group([ 'namespace' => 'Sites'], function()
     Route::get('/size-char', 'HomeController@sizeChar')->name('sites.size-char');
     Route::get('/my-account', 'HomeController@myAccount')->name('sites.my-account');
     Route::get('/cart', 'HomeController@cart')->name('sites.cart');
+    Route::get('/shipping-policy', 'HomeController@policyShipping')->name('policy.shipping');
+    Route::get('/return-and-refund-policy', 'HomeController@policyRefund')->name('policy.refund');
+    Route::get('/privace-policy', 'HomeController@policyPrivace')->name('policy.privace');
+    Route::get('terms-of-service', 'HomeController@policyConditions')->name('policy.conditions');
 
     Route::get('getNumberProduct/{hash}', 'CartController@getNumberProduct');
 

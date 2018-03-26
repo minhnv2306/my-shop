@@ -37,16 +37,16 @@
                             <ul id="menu-policies" class="menu">
                                 <li id="menu-item-32"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32">
-                                    <a href="https://goatstee.com/shipping-policy/">Shipping Policy</a></li>
+                                    <a href="{{route('policy.shipping')}}">Shipping Policy</a></li>
                                 <li id="menu-item-31"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31">
-                                    <a href="https://goatstee.com/return-and-refund/">Return and Refund</a></li>
+                                    <a href="{{route('policy.refund')}}">Return and Refund</a></li>
                                 <li id="menu-item-29"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29">
-                                    <a href="https://goatstee.com/privacy-policy/">Privacy Policy</a></li>
+                                    <a href="{{route('policy.privace')}}">Privacy Policy</a></li>
                                 <li id="menu-item-30"
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30">
-                                    <a href="https://goatstee.com/terms-of-service/">Terms Of Conditions</a>
+                                    <a href="{{route('policy.conditions')}}">Terms Of Conditions</a>
                                 </li>
                             </ul>
                         </div>
@@ -59,13 +59,13 @@
                         <div class="menu-secondary-menu-container">
                             <ul id="menu-secondary-menu" class="menu">
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-33">
-                                    <a href="https://goatstee.com/about-us/">About Us</a></li>
+                                    <a href="{{route('sites.about-us')}}">About Us</a></li>
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39">
-                                    <a href="https://goatstee.com/contact-us/">Contact Us</a></li>
+                                    <a href="{{route('sites.contact-us')}}">Contact Us</a></li>
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38">
-                                    <a href="https://goatstee.com/faqs/">FAQs</a></li>
+                                    <a href="{{route('sites.faqs')}}">FAQs</a></li>
                                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-377685">
-                                    <a href="https://goatstee.com/size-chart/">Size Chart</a></li>
+                                    <a href="{{route('sites.size-char')}}">Size Chart</a></li>
                             </ul>
                         </div>
                     </aside>
@@ -102,9 +102,9 @@
     </div><!-- #tertiary -->
     <div class="site-info">
         <div class="container">
-            <p class="copyright">© Copyright 2016 <a href="http://goatstee.com">Goatstee</a></p>
+            <p class="copyright">© Copyright 2016 <a href="{{route('home')}}">Goatstee</a></p>
             <div class="payment-method"><img width="233" height="26"
-                                             src="https://goatstee.com/wp-content/uploads/2016/10/paypalcard.png"
+                                             src="/img/paypalcard.png"
                                              class="attachment-full size-full" alt="paypalcard"
                                              itemprop="image"/></div>
         </div><!-- .site-info -->

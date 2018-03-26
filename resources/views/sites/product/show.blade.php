@@ -109,39 +109,21 @@
             padding: 0 !important;
         }
     </style>
-    <link rel='stylesheet' id='contact-form-7-css'
-          href='https://goatstee.com/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=4.7' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='junkie-shortcodes-css'
-          href='https://goatstee.com/wp-content/plugins/theme-junkie-shortcodes/assets/css/junkie-shortcodes.css?ver=4.6.10'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='pif-styles-css'
-          href='https://goatstee.com/wp-content/plugins/woocommerce-product-image-flipper/assets/css/style.css?ver=4.6.10'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='woocommerce_prettyPhoto_css-css'
-          href='//goatstee.com/wp-content/plugins/woocommerce/assets/css/prettyPhoto.css?ver=2.6.7' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='ywot_style-css'
-          href='https://goatstee.com/wp-content/plugins/yith-woocommerce-order-tracking/assets/css/ywot_style.css?ver=4.6.10'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='jquery-selectBox-css'
-          href='https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/css/jquery.selectBox.css?ver=1.2.0'
-          type='text/css' media='all'/>
-    <link rel='stylesheet' id='yith-wcwl-main-css'
-          href='https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/css/style.css?ver=2.0.16'
-          type='text/css' media='all'/>
+    <link rel='stylesheet' id='contact-form-7-css' href='/css/goatstee/styles.css?ver=4.7' type='text/css' media='all'/>
+    <link rel='stylesheet' id='junkie-shortcodes-css' href='/css/goatstee/junkie-shortcodes.css?ver=4.6.10' type='text/css' media='all'/>
+    <link rel='stylesheet' id='pif-styles-css' href='/css/goatstee/style.css?ver=4.6.10' type='text/css' media='all'/>
+    <link rel='stylesheet' id='ywot_style-css' href='/css/goatstee/ywot_style.css?ver=4.6.10' type='text/css' media='all'/>
+    <link rel='stylesheet' id='woocommerce_prettyPhoto_css-css' href='/css/goatstee/prettyPhoto.css?ver=3.1.6' type='text/css' media='all'/>
+    <link rel='stylesheet' id='jquery-selectBox-css' href='/css/goatstee/jquery.selectBox.css?ver=1.2.0' type='text/css' media='all'/>
+    <link rel='stylesheet' id='yith-wcwl-main-css' href='/css/goatstee/style1.css?ver=2.0.16' type='text/css' media='all'/>
     <link rel='stylesheet' id='yith-wcwl-font-awesome-css'
           href='https://goatstee.com/wp-content/plugins/yith-woocommerce-wishlist/assets/css/font-awesome.min.css?ver=4.3.0'
           type='text/css' media='all'/>
-    <link rel='stylesheet' id='shopy-plugins-style-css'
-          href='https://goatstee.com/wp-content/themes/shopy/assets/css/plugins.min.css?ver=4.6.10' type='text/css'
-          media='all'/>
-    <link rel='stylesheet' id='shopy-style-css'
-          href='https://goatstee.com/wp-content/themes/shopy/style.min.css?ver=4.6.10' type='text/css' media='all'/>
+    <link rel='stylesheet' id='shopy-plugins-style-css' href='/css/goatstee/plugins.min.css?ver=4.6.10' type='text/css' media='all'/>
+    <link rel='stylesheet' id='shopy-style-css' href='/css/goatstee/shopy/style.min.css?ver=4.6.10' type='text/css' media='all'/>
     <link rel='stylesheet' id='shopy-custom-fonts-css'
           href='//fonts.googleapis.com/css?family=Nunito%3Aregular%2C700%2C300%7CKameron%3Aregular%2C700%26subset%3Dlatin%2C'
           type='text/css' media='all'/>
-    <script type='text/javascript' src='https://goatstee.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
     <script type='text/javascript' src='/js/goatstee/jquery-migrate.min.js?ver=1.4.1'></script>
     <script type='text/javascript' src='/js/goatstee/script.js?ver=4.6.10'></script>
     <script type='text/javascript' src='/js/goatstee/jquery.tooltipster.min.js?ver=4.6.10'></script>
@@ -150,7 +132,6 @@
         var ywot = {"p": ""};
         /* ]]> */
     </script>
-    <script type='text/javascript'
     <script type='text/javascript' src='/js/goatstee/ywot.js?ver=4.6.10'></script>    <link rel='https://api.w.org/' href='https://goatstee.com/wp-json/'/>
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://goatstee.com/xmlrpc.php?rsd"/>
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://goatstee.com/wp-includes/wlwmanifest.xml"/>

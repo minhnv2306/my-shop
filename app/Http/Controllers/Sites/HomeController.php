@@ -45,4 +45,20 @@ class HomeController extends Controller
     {
         return view('sites.cart');
     }
+    public function policyConditions()
+    {
+        return view('sites.policy.conditions');
+    }
+    public function policyPrivace()
+    {
+        return view('sites.policy.privace');
+    }
+    public function policyRefund()
+    {
+        return view('sites.policy.refund');
+    }
+    public function policyShipping()
+    {
+        return view('sites.policy.shipping');
+    }
 }
