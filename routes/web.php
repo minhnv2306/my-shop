@@ -49,6 +49,7 @@ Route::group([ 'namespace' => 'Sites'], function()
 
     Route::resource('carts', 'CartController');
     Route::get('my-cart', 'CartController@getMyCart')->name('carts.showMyCart');
+    Route::post('update-cart', 'CartController@updateCart')->name('carts.update');
     Route::get('show-my-cart/{hash}', 'CartController@showMyCart');
     Route::get('delete-product-cart/{product_cart_id}/{cart_id}', 'CartController@deleteProductOfCart')->name('cart.delete-product');
 

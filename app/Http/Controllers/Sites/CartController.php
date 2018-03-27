@@ -60,6 +60,7 @@ class CartController extends Controller
             dd($ex->getMessage());
         }
     }
+
     public function getNumberProduct(Request $request)
     {
         $cart = Cart::where('hash_cart', $request->hash)->first();
@@ -76,6 +77,7 @@ class CartController extends Controller
             'total_price' => $total_price
         ]);
     }
+
     public function showMyCart(Request $request)
     {
         $cart = Cart::where('hash_cart', $request->hash)->first();
@@ -89,10 +91,12 @@ class CartController extends Controller
             'total_price' => empty($cart) ? 0 : $cart->price,
         ]);
     }
+
     public function getMyCart()
     {
         return view('sites.cart.show');
     }
+
     public function deleteProductOfCart($product_cart_id, $cart_id)
     {
         DB::beginTransaction();
@@ -102,7 +106,7 @@ class CartController extends Controller
                 'cart_id' => $cart_id,
             ])->first();
             $cart = Cart::find($cart_id);
-            if (! empty($product_cart) && ! empty($cart)) {
+            if (!empty($product_cart) && !empty($cart)) {
                 $product_cart->delete();
                 $new_price = $cart->price - $product_cart->price;
                 $cart->update([
@@ -116,6 +120,43 @@ class CartController extends Controller
                 return view('errors.404');
             }
 
+        } catch (Exception $ex) {
+            DB::rollback();
+            return view('errors.404');
+        }
+    }
+
+    public function updateCart(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+            $cart_price = 0;
+            if (!empty($request->cart)) {
+                foreach ($request->cart as $key => $value) {
+                    $product_cart = Product_cart::find($key);
+                    if (!empty($product_cart)) {
+                        $product_cart_price = $product_cart->product->price * $value['qty'];
+                        $product_cart->update([
+                            'number' => $value['qty'],
+                            'price' => $product_cart_price,
+                        ]);
+                        $cart_price += $product_cart_price;
+
+                        if (empty($cart)) {
+                            $cart = $product_cart->cart;
+                        }
+
+                    } else {
+                        DB::rollback();
+                        return view('errors.404');
+                    }
+                }
+                $cart->update([
+                    'price' => $cart_price
+                ]);
+                DB::commit();
+                return redirect()->route('carts.showMyCart')->with('messages', 'Update cart successfully');
+            }
         } catch (Exception $ex) {
             DB::rollback();
             return view('errors.404');

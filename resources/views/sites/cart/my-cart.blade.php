@@ -2,7 +2,10 @@
     @if(count($product_carts) == 0)
         <p class="cart-empty">Your cart is currently empty.</p>
     @else
-        <form action="https://goatstee.com/cart/" method="post">
+        {!! Form::open([
+            'method' => 'POST',
+            'route' => 'carts.update'
+        ]) !!}
 
 
             <table class="shop_table shop_table_responsive cart" cellspacing="0">
@@ -31,13 +34,12 @@
                                data-product_sku="">&times;</a></td>
 
                         <td class="product-thumbnail">
-                            <a href="https://goatstee.com/product/i-am-a-taurus-woman-funny-t-shirt/?attribute_color=Navy&#038;attribute_size=S&#038;attribute_fit-type=Men">
-                                <!-- Featured Image From URL plugin -->
+                            <a href="{{route('sites.products.show', ['product' => $product_cart->product_id])}}">                                <!-- Featured Image From URL plugin -->
                                 <img src="{{getLinkImage($product_cart->product->avatar)}}"
                                      alt="I Am A Taurus Woman Funny T Shirt"></img></a></td>
 
                         <td class="product-name" data-title="Product">
-                            <a href="https://goatstee.com/product/i-am-a-taurus-woman-funny-t-shirt/?attribute_color=Navy&#038;attribute_size=S&#038;attribute_fit-type=Men">
+                            <a href="{{route('sites.products.show', ['product' => $product_cart->product_id])}}">
                                 {{$product_cart->product->name}}</a>
                             <dl class="variation">
                                 <dt class="variation-Color">Color:</dt>
@@ -61,7 +63,7 @@
                         <td class="product-quantity" data-title="Quantity">
                             <div class="quantity">
                                 <input type="number" step="1" min="0" max=""
-                                       name="cart[74686d33bfcb9b980ecea2df8d2b78dc][qty]"
+                                       name={{"cart[" . $product_cart->id ."][qty]"}}
                                        value="{{$product_cart->number}}"
                                        title="Qty" class="input-text qty text" size="4"
                                        pattern="[0-9]*" inputmode="numeric"/>
@@ -80,32 +82,22 @@
 
                         <div class="coupon">
 
-                            <label for="coupon_code">Coupon:</label> <input type="text"
-                                                                            name="coupon_code"
-                                                                            class="input-text"
-                                                                            id="coupon_code"
-                                                                            value=""
-                                                                            placeholder="Coupon code"/>
+                            <label for="coupon_code">Coupon:</label>
+                            <input type="text" name="coupon_code" class="input-text" id="coupon_code"
+                                   value="" placeholder="Coupon code"/>
                             <input type="submit" class="button" name="apply_coupon"
                                    value="Apply Coupon"/>
 
                         </div>
 
-                        <input type="submit" class="button" name="update_cart"
-                               value="Update Cart"/>
+                        <button class="button">Update Cart</button>
 
-
-                        <input type="hidden" id="_wpnonce" name="_wpnonce"
-                               value="c9c44ab6b3"/><input type="hidden"
-                                                          name="_wp_http_referer"
-                                                          value="/cart/"/></td>
+                    </td>
                 </tr>
 
                 </tbody>
             </table>
-
-
-        </form>
+        {!! Form::close() !!}
 
         <div class="cart-collaterals">
 
