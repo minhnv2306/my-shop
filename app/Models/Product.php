@@ -77,7 +77,7 @@ class Product extends Model
             $option = empty($param['option']) ? 'asc' : $param['option'];
             $result = $result->orderBy($param['orderby'], $option);
         }
-        return $result->paginate(3);
+        return $result->paginate(12);
     }
 
 }

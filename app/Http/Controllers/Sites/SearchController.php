@@ -15,11 +15,11 @@ class SearchController extends Controller
             switch ($request->orderby) {
                 case 1:
                     $param['orderby'] = 'price';
-                    $param['option'] = 'desc';
+                    $param['option'] = 'asc';
                     break;
                 case 2:
                     $param['orderby'] = 'price';
-                    $param['option'] = 'asc';
+                    $param['option'] = 'desc';
                     break;
                 default:
                     $param['orderby'] = 'created_at';
@@ -31,9 +31,15 @@ class SearchController extends Controller
         $links2 = str_replace("<ul", "<ul class='page-numbers'", $links1);
         $links3 = str_replace("<a", "<a class='page-numbers'", $links2);
         $links4 = str_replace('<li class="active"><span>', "<li><span class='page-numbers current'>", $links3);
+
+        if (empty($request->orderby)) {
+            $links5 = str_replace('search?', "search?s=" . $param['key'] . '&', $links4);
+        } else {
+            $links5 = str_replace('search?', "search?s=" . $param['key'] . '&orderby=' . $request->orderby . '&', $links4);
+        }
         return view('sites.search', [
             'products' => $products,
-            'links' => $links4,
+            'links' => $links5,
             'key' => $request->s,
         ]);
     }

@@ -618,10 +618,9 @@
                         <div class="shopy-sorting">
                             <form class="woocommerce-ordering" method="get">
                                 <select class="orderby" id="orderby" name="orderby">
-                                    <option value="0" selected='selected'>Default sorting</option>
-                                    <option value="1">Sort by price: low to high</option>
-                                    <option value="2">Sort by price: high to low</option>
-                                    <option value="3">Sort by create at</option>
+                                    <option value="0">Sort by create at</option>
+                                    <option value="1" {{request('orderby') == 1 ? 'selected' : ''}}>Sort by price: low to high</option>
+                                    <option value="2" {{request('orderby') == 2 ? 'selected' : ''}}>Sort by price: high to low</option>
                                 </select>
                                 <input type="hidden" name="s" value="{{$key}}"/>
                             </form>
