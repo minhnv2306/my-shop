@@ -7,9 +7,13 @@
 @section('here', 'Create new product')
 @section('main-content')
     <div class="container-fluid spark-screen">
+        {!! Form::open([
+            'method' => 'POST',
+            'route' => 'products.store',
+            'enctype' => 'multipart/form-data'
+         ]) !!}
         <div class="row">
-            <div class="col-xs-12">
-
+            <div class="col-xs-6">
                 <div class="box box-info">
                     <div class="box-header">
                         <div class="row">
@@ -18,11 +22,6 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        {!! Form::open([
-                            'method' => 'POST',
-                            'route' => 'products.store',
-                            'enctype' => 'multipart/form-data'
-                        ]) !!}
                         <div class="table-responsive">
                             <div class="form-group">
                                 <label for="name">Name:</label>
@@ -31,21 +30,8 @@
 
                             <div class="form-group" style="width: 20%">
                                 <label for="price">Price ($):</label>
-                                <input type="number" class="form-control" id="price" name="price" value="{{old('price')}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="sel1">Color:</label>
-                                <br/>
-                                @foreach(\App\Models\Product::getColor() as $key=>$value)
-                                    <label class="checkbox-inline"><input type="checkbox" name="color{{$key}}" value="{{$value}}"> {{$value}}</label>
-                                @endforeach
-                            </div>
-                            <div class="form-group">
-                                <label for="sel1">Size:</label>
-                                <br/>
-                                @foreach(\App\Models\Product::getSize() as $key=>$value)
-                                    <label class="checkbox-inline"><input type="checkbox" name="size{{$key}}" value="{{$value}}"> {{$value}}</label>
-                                @endforeach
+                                <input type="number" class="form-control" id="price" name="price"
+                                       value="{{old('price')}}">
                             </div>
                             <div class="form-group">
                                 <label for="sel1">Type:</label>
@@ -62,22 +48,98 @@
                                     <option value="50%">50%</option>
                                 </select>
                             </div>
+
+                        </div>
+                    </div><!--table-responsive-->
+
+                </div>
+            </div>
+            <!-- /.box -->
+
+            <div class="col-xs-6">
+
+                <div class="box box-info">
+                    <div class="box-header">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <label for="sel1">Color:</label>
+                            <br>
+                            @foreach(\App\Models\Product::getColor() as $key=>$value)
+                                <label class="checkbox-inline" style="width: 200px; margin-left: 20px">
+                                    <input type="checkbox" name="color{{$key}}" value="{{$value}}" checked> {{$value}}
+                                </label>
+                            @endforeach
+                        </div>
+                        <div class="form-group">
+                            <label for="sel1">Size:</label>
+                            <br/>
+                            @foreach(\App\Models\Product::getSize() as $key=>$value)
+                                <label class="checkbox-inline" style="width: 100px; margin-left: 20px">
+                                    <input type="checkbox" name="size{{$key}}" value="{{$value}}" checked> {{$value}}
+                                </label>
+                            @endforeach
+                        </div>
+                    </div>
+                </div><!--table-responsive-->
+
+            </div>
+        </div>
+        <!-- /.box -->
+        <div class="row">
+            <div class="col-xs-6">
+
+                <div class="box box-info">
+                    <div class="box-header">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
                             <div class="form-group">
                                 <label for="comment">Machine:</label>
-                                <textarea class="form-control" rows="5" id="comment" name="machine">{{old('machine')}}</textarea>
+                                <textarea class="form-control" rows="5" id="comment"
+                                          name="machine">{{old('machine')}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="comment">Note 1:</label>
-                                <textarea class="form-control" rows="5" id="comment" name="note_1">{{old('note_1')}}</textarea>
+                                <textarea class="form-control" rows="5" id="comment"
+                                          name="note_1">{{old('note_1')}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="comment">Note 2:</label>
-                                <textarea class="form-control" rows="5" id="comment" name="note_2">{{old('note_2')}}</textarea>
+                                <textarea class="form-control" rows="5" id="comment"
+                                          name="note_2">{{old('note_2')}}</textarea>
                             </div>
                             <div class="form-group">
                                 <label for="comment">Note 3:</label>
-                                <textarea class="form-control" rows="5" id="comment" name="note_3">{{old('note_3')}}</textarea>
+                                <textarea class="form-control" rows="5" id="comment"
+                                          name="note_3">{{old('note_3')}}</textarea>
                             </div>
+                        </div>
+                    </div><!--table-responsive-->
+
+                </div>
+            </div>
+            <!-- /.box -->
+
+            <div class="col-xs-6">
+
+                <div class="box box-info">
+                    <div class="box-header">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
                             <div class="form-group">
                                 <label for="sel1">Avatar:</label>
                                 <input type="file" accept="image/*" onchange="preview_image(event)" name="avatar">
@@ -154,13 +216,12 @@
                                 </script>
                             </div>
                         </div>
-                        <button class="btn btn-primary">Create</button>
-                        {!! Form::close() !!}
                     </div><!--table-responsive-->
 
                 </div>
             </div>
-            <!-- /.box -->
         </div>
+        <button class="btn btn-primary">Create</button>
+        {!! Form::close() !!}
     </div>
 @endsection

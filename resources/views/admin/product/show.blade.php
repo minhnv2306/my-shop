@@ -8,9 +8,13 @@
 
 @section('main-content')
     <div class="container-fluid spark-screen">
+        {!! Form::open([
+            'method' => 'PUT',
+            'route' => ['products.update', 'product' => $product->id],
+            'enctype' => 'multipart/form-data',
+        ]) !!}
         <div class="row">
-            <div class="col-xs-12">
-
+            <div class="col-xs-6">
                 <div class="box box-info">
                     <div class="box-header">
                         <div class="row">
@@ -19,11 +23,6 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                        {!! Form::open([
-                            'method' => 'PUT',
-                            'route' => ['products.update', 'product' => $product->id],
-                            'enctype' => 'multipart/form-data',
-                        ]) !!}
                         <div class="table-responsive">
                             <div class="form-group">
                                 <label for="name">Name:</label>
@@ -34,32 +33,6 @@
                                 <label for="price">Price ($):</label>
                                 <input type="number" class="form-control" id="price" name="price"
                                        value="{{$product->price}}">
-                            </div>
-                            <div class="form-group" style="width: 20%">
-                                <label for="price">Number:</label>
-                                <input type="number" class="form-control" id="price" name="number"
-                                       value="{{$product->number}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="sel1">Color:</label>
-                                <br/>
-
-                                <label class="checkbox-inline"><input type="checkbox" name="color1" value="black"
-                                            {{checkRadio('Black', $colors) }}>Black</label>
-                                <label class="checkbox-inline"><input type="checkbox" name="color2" value="white"
-                                            {{checkRadio('White', $colors)}}>White</label>
-                                <label class="checkbox-inline"><input type="checkbox" name="color3" value="red"
-                                            {{checkRadio('Red', $colors)}}>Red</label>
-                            </div>
-                            <div class="form-group">
-                                <label for="sel1">Size:</label>
-                                <br/>
-                                <label class="checkbox-inline"><input type="checkbox" name="size1" value="S"
-                                            {{checkRadio('S', $sizes) }}>S</label>
-                                <label class="checkbox-inline"><input type="checkbox" name="size2" value="M"
-                                            {{checkRadio('M', $sizes) }}>M</label>
-                                <label class="checkbox-inline"><input type="checkbox" name="size3" value="L"
-                                            {{checkRadio('L', $sizes) }}>L</label>
                             </div>
                             <div class="form-group">
                                 <label for="sel1">Type:</label>
@@ -73,6 +46,60 @@
                                     {!!  \App\Helper\DataHelper::genOptionValues(\App\Models\Product::getCotton(), $product->cotton) !!}
                                 </select>
                             </div>
+
+                        </div>
+                    </div><!--table-responsive-->
+
+                </div>
+            </div>
+            <!-- /.box -->
+
+            <div class="col-xs-6">
+
+                <div class="box box-info">
+                    <div class="box-header">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="form-group">
+                            <label for="sel1">Color:</label>
+                            <br/>
+                            @foreach(\App\Models\Product::getColor() as $key=>$value)
+                                <label class="checkbox-inline" style="width: 200px; margin-left: 20px">
+                                    <input type="checkbox" name="color{{$key}}" value="{{$value}}" {{checkRadio($value, $colors)}}> {{$value}}
+                                </label>
+                            @endforeach
+                        </div>
+                        <div class="form-group">
+                            <label for="sel1">Size:</label>
+                            <br/>
+                            @foreach(\App\Models\Product::getSize() as $key=>$value)
+                                <label class="checkbox-inline" style="width: 200px; margin-left: 20px">
+                                    <input type="checkbox" name="size{{$key}}" value="{{$value}}" {{checkRadio($value, $sizes)}}> {{$value}}
+                                </label>
+                            @endforeach
+                        </div>
+                    </div>
+                </div><!--table-responsive-->
+
+            </div>
+        </div>
+        <!-- /.box -->
+        <div class="row">
+            <div class="col-xs-6">
+
+                <div class="box box-info">
+                    <div class="box-header">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
                             <div class="form-group">
                                 <label for="comment">Machine:</label>
                                 <textarea class="form-control" rows="5" id="comment"
@@ -93,6 +120,24 @@
                                 <textarea class="form-control" rows="5" id="comment"
                                           name="note_3">{{$product->note_3}}</textarea>
                             </div>
+                        </div>
+                    </div><!--table-responsive-->
+
+                </div>
+            </div>
+            <!-- /.box -->
+
+            <div class="col-xs-6">
+
+                <div class="box box-info">
+                    <div class="box-header">
+                        <div class="row">
+
+                        </div>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
                             <div class="form-group">
                                 <label for="sel1">Avatar:</label>
                                 <img src="{{getLinkImage($product->avatar)}}" width="120px" height="120px">
@@ -182,13 +227,12 @@
                                 </script>
                             </div>
                         </div>
-                        <button class="btn btn-primary">Update</button>
-                        {!! Form::close() !!}
                     </div><!--table-responsive-->
 
                 </div>
             </div>
-            <!-- /.box -->
         </div>
+        <button class="btn btn-primary">Update</button>
+        {!! Form::close() !!}
     </div>
 @endsection

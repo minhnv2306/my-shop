@@ -667,17 +667,6 @@
                             <div class="summary entry-summary">
 
                                 <h1 itemprop="name" class="product_title entry-title">{{$product->name}}</h1>
-                                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-
-                                    <p class="price"><span class="woocommerce-Price-amount amount"><span
-                                                    class="woocommerce-Price-currencySymbol">&#36;</span>{{$product->price}}</span>
-                                    </p>
-
-                                    <meta itemprop="price" content="21.95"/>
-                                    <meta itemprop="priceCurrency" content="USD"/>
-                                    <link itemprop="availability" href="http://schema.org/InStock"/>
-
-                                </div>
 
 
                                 {!! Form::open([
@@ -742,7 +731,7 @@
                                         <div class="woocommerce-variation single_variation"></div>
                                         <div class="woocommerce-variation-add-to-cart variations_button">
                                             <div class="quantity">
-                                                <input type="number" step="1" min="" max="" name="quantity" value="1"
+                                                <input type="number" step="1" min="1" max="" name="quantity" value="1"
                                                        title="Qty" class="input-text qty text number_product" size="4" pattern="[0-9]*"
                                                        inputmode="numeric"/>
                                             </div>
@@ -1019,7 +1008,7 @@
                                                     <p class="form-submit">
                                                         <button id="submit" class="submit"> Submit</button>
                                                     </p>
-
+                                                    <input type="hidden" value="{{$product->id}}" name="product_id">
                                                     {!! Form::close() !!}
                                                 </div><!-- #respond -->
                                             </div>

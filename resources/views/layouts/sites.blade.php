@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="https://goatstee.com/xmlrpc.php">
     <meta name="google-site-verification" content="qY0zYEE7M5CSLC5qQka72up1VYMDTooYURCdOg9J3S4"/>
     <input type="hidden" name="hash" id="hash" value="{{sha1('minh' . rand())}}"/>
 
@@ -583,7 +582,6 @@
     </style>
     <!-- End Custom CSS -->
     <!--[if lte IE 9]>
-    <script src="https://goatstee.com/wp-content/themes/shopy/assets/js/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 

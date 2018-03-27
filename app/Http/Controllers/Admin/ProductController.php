@@ -64,7 +64,7 @@ class ProductController extends Controller
                 'image_4' => empty($image4) ? '' : saveLinkImage($image4)
             ]);
             // Cretae size
-            for($i = 1; $i < 4; $i++) {
+            for($i = 1; $i < 14; $i++) {
                 $index = 'size' . $i;
                 if (!empty($request[$index])) {
                     Product_size::create([
@@ -74,7 +74,7 @@ class ProductController extends Controller
                 }
             }
             // Create color
-            for($i = 1; $i < 4; $i++) {
+            for($i = 1; $i < 20; $i++) {
                 $index = 'color' . $i;
                 if (!empty($request[$index])) {
                     Product_color::create([
@@ -150,7 +150,7 @@ class ProductController extends Controller
                 ]);
             }
             // Cretae size
-            for($i = 1; $i < 4; $i++) {
+            for($i = 1; $i < 14; $i++) {
                 $index = 'size' . $i;
                 if (empty($request[$index])) {
                     if (Product_size::checkSize($product->id, Product::getDetailSize($i))) {
@@ -169,7 +169,7 @@ class ProductController extends Controller
                 }
             }
             // Create color
-            for($i = 1; $i < 4; $i++) {
+            for($i = 1; $i < 20; $i++) {
                 $index = 'color' . $i;
                 if (empty($request[$index])) {
                     if (Product_color::checkColor($product->id, Product::getDetailColor($i))) {

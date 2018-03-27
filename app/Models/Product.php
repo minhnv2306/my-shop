@@ -39,8 +39,24 @@ class Product extends Model
     {
         return array(
             '1' => 'Black',
-            '2' => 'White',
-            '3' => 'Red',
+            '2' => 'Navy',
+            '3' => 'Slate',
+            '4' => 'Asphalt',
+            '5' => 'Silver',
+            '6' => 'Red',
+            '7' => 'Cranberry',
+            '8' => 'White',
+            '9' => 'Royal Blue',
+            '10' => 'Brown',
+            '11' => 'Olive',
+            '12' => 'Baby Blue',
+            '13' => 'Lemon',
+            '14' => 'Pink',
+            '15' => 'Kelly Green',
+            '16' => 'Heather Grey',
+            '17' => 'Heather Blue',
+            '18' => 'Dark Heather',
+            '19' => 'Orange',
         );
     }
     public static function getDetailColor($key)
@@ -57,6 +73,16 @@ class Product extends Model
             '1' => 'S',
             '2' => 'M',
             '3' => 'L',
+            '4' => 'XL',
+            '5' => '2XL',
+            '6' => '3XL',
+            '7' => '4XL',
+            '8' => '5XL',
+            '9' => 'YXS',
+            '10' => 'YS',
+            '11' => 'YM',
+            '12' => 'YL',
+            '13' => 'YXL'
         );
     }
     public static function getDetailSize($key)
