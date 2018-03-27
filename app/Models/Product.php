@@ -67,10 +67,17 @@ class Product extends Model
         }
         return '';
     }
-    public static function search($key)
+    public static function search($param = array())
     {
-        return self::getBaseList()
-            ->where('name', 'like', '%' . $key . '%')
-            ->paginate(3);
+        $result = self::select('*');
+        if (!empty($param['key'])) {
+            $result = $result->where('name', 'like', '%' . $param['key'] . '%');
+        }
+        if (!empty($param['orderby'])) {
+            $option = empty($param['option']) ? 'asc' : $param['option'];
+            $result = $result->orderBy($param['orderby'], $option);
+        }
+        return $result->paginate(3);
     }
+
 }

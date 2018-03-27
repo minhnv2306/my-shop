@@ -617,16 +617,14 @@
                         @else
                         <div class="shopy-sorting">
                             <form class="woocommerce-ordering" method="get">
-                                <select name="orderby" class="orderby">
-                                    <option value="menu_order" selected='selected'>Default sorting</option>
-                                    <option value="popularity">Sort by popularity</option>
-                                    <option value="rating">Sort by average rating</option>
-                                    <option value="date">Sort by newness</option>
-                                    <option value="price">Sort by price: low to high</option>
-                                    <option value="price-desc">Sort by price: high to low</option>
+                                <select class="orderby" id="orderby" name="orderby">
+                                    <option value="0" selected='selected'>Default sorting</option>
+                                    <option value="1">Sort by price: low to high</option>
+                                    <option value="2">Sort by price: high to low</option>
+                                    <option value="3">Sort by create at</option>
                                 </select>
-                                <input type="hidden" name="s" value=""/><input type="hidden" name="post_type"
-                                                                               value="product"/></form>
+                                <input type="hidden" name="s" value="{{$key}}"/>
+                            </form>
                             <nav class="gridlist-toggle">
                                 <a href="#" id="grid" title="Grid view"><span
                                             class="dashicons dashicons-grid-view"></span> <em>Grid view</em></a><a
@@ -838,6 +836,11 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
 <script type='text/javascript' src='https://goatstee.com/wp-includes/js/masonry.min.js?ver=3.3.2'></script>
 <script type='text/javascript' src='https://goatstee.com/wp-content/themes/shopy/assets/js/shopy.min.js'></script>
 <script type='text/javascript' src='https://goatstee.com/wp-includes/js/wp-embed.min.js?ver=4.6.10'></script>
+<script>
+    $('#orderby').change(function () {
+        console.log(1);
+    })
+</script>
 
 </body>
 </html>
