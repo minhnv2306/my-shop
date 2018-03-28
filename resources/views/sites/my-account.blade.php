@@ -1,5 +1,5 @@
 @extends('layouts.sites')
-@section('title', 'My account')
+@section('title', 'My Account')
 @section('content')
     @if(\Illuminate\Support\Facades\Auth::check())
         <div id="content" class="site-content">
@@ -10,46 +10,17 @@
                             <h1 class="page-title" itemprop="headline">My Account</h1>
                             <div class="entry-content" itemprop="text">
                                 <div class="woocommerce">
-                                    <nav class="woocommerce-MyAccount-navigation">
-                                        <ul>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--dashboard is-active">
-                                                <a href="https://goatstee.com/my-account/">Dashboard</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--orders">
-                                                <a href="https://goatstee.com/my-account/orders/">Orders</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--downloads">
-                                                <a href="https://goatstee.com/my-account/downloads/">Downloads</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-address">
-                                                <a href="https://goatstee.com/my-account/edit-address/">Addresses</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--payment-methods">
-                                                <a href="https://goatstee.com/my-account/payment-methods/">Payment Methods</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--edit-account">
-                                                <a href="https://goatstee.com/my-account/edit-account/">Account Details</a>
-                                            </li>
-                                            <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--customer-logout">
-                                                <a href="https://goatstee.com/my-account/customer-logout/">Logout</a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-
-
+                                    @include('sites.components.address_header')
                                     <div class="woocommerce-MyAccount-content">
                                         <p>
-                                            Hello <strong>minh1101</strong> (not minh1101? <a href="https://goatstee.com/my-account/customer-logout/">Sign out</a>)</p>
+                                            Hello <strong>{{convertEmailToUsername(\Illuminate\Support\Facades\Auth::user()->email)}}</strong>
+                                            (not {{convertEmailToUsername(\Illuminate\Support\Facades\Auth::user()->email)}} <a href="/logout">Sign out</a>)</p>
                                         <p>
-                                            From your account dashboard you can view your <a href="https://goatstee.com/my-account/orders/">recent orders</a>, manage your <a href="https://goatstee.com/my-account/edit-address/">shipping and billing addresses</a> and <a href="https://goatstee.com/my-account/edit-account/">edit your password and account details</a>.</p>
+                                            From your account dashboard you can view your <a href="#">recent orders</a>, manage your <a href="{{route('user.address')}}">shipping and billing addresses</a> and <a href="{{route('user.detail-user')}}">edit your password and account details</a>.</p>
                                     </div>
                                 </div>
                             </div><!-- .entry-content -->
-
-
                         </article><!-- #post-## -->
-
-
 
                     </main><!-- #main -->
                 </div><!-- #primary -->
@@ -67,17 +38,22 @@
                             <div class="entry-content" itemprop="text">
                                 <div class="woocommerce">
 
+                                    @include('sites.components.error')
+
                                     <div class="u-columns col2-set" id="customer_login">
                                         <div class="u-column1 col-1">
                                             <h2>Login</h2>
-                                            <form method="post" class="login">
+                                            {!! Form::open([
+                                                'route' => 'sites.login',
+                                                'method' => 'POST',
+                                            ]) !!}
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="username">Username or email address <span class="required">*</span></label>
-                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" value="" />
+                                                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="username" value="" required/>
                                                 </p>
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="password">Password <span class="required">*</span></label>
-                                                    <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" />
+                                                    <input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" required minlength="6"/>
                                                 </p>
                                                 <p class="form-row">
                                                     <button class="woocommerce-Button button" name="login">Login</button>
@@ -92,6 +68,7 @@
                                         <div class="u-column2 col-2">
                                             <h2>Register</h2>
                                             {!! Form::open([
+                                                'url' => '/register',
                                                 'method' => 'POST'
                                             ]) !!}
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
@@ -100,7 +77,7 @@
                                                 </p>
                                                 <p class="woocommerce-FormRow woocommerce-FormRow--wide form-row form-row-wide">
                                                     <label for="reg_password">Password <span class="required">*</span></label>
-                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" />
+                                                    <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" minlength="6"/>
                                                 </p>
                                                 <!-- Spam Trap -->
                                                 <p class="woocomerce-FormRow form-row">

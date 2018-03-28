@@ -13,3 +13,25 @@
         'csrfToken' => csrf_token(),
     ]) !!};
 </script>
+<!-- Datatable -->
+<script src="/plugins/datatables/dataTables.bootstrap.js"></script>
+<script src="/plugins/datatables/jquery.dataTables.js"></script>
+<!-- Toastr -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    $('.data_table').DataTable({
+        "order": [0, 'desc'],
+    });
+</script>
+@if(!empty(session('messages')))
+    <script>
+        toastr.success('{{session('messages')}}')
+    </script>
+@endif
+@if(!empty(session('errors')))
+    <script>
+        toastr.error('{{session('errors')}}')
+    </script>
+@endif
+
+
