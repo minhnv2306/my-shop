@@ -195,4 +195,14 @@ class ProductController extends Controller
             return redirect()->route('products.index')->with('error', $ex->getMessage());
         }
     }
+    public function destroy(Product $product)
+    {
+        try {
+            $product->delete();
+
+            return redirect()->route('products.index')->with('messages', 'Delete product successfully!');
+        } catch (Excetion $ex) {
+            return redirect()->route('products.index')->with('error', $ex->getMessage());
+        }
+    }
 }

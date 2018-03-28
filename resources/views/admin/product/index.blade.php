@@ -72,7 +72,13 @@
                                         <td>
                                             <a href="{{route('products.show', ['product' => $product->id])}}"
                                                class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                            <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                                            {!! Form::open([
+                                                'method' => 'DELETE',
+                                                'route' => ['products.destroy', 'product' => $product->id,],
+                                                'class' => 'inline'
+                                            ]) !!}
+                                            <button class="btn btn-danger btn-xs" id="delete-product"><i class="fa fa-trash"></i></button>
+                                            {!! Form::close() !!}
                                         </td>
                                     </tr>
                                 @endforeach
@@ -95,6 +101,13 @@
     <script>
         $(document).ready(function () {
             $('#product-manager').addClass('active');
+            $('#delete-product').click(function (e) {
+                if (confirm('Do you want to delete this product?')) {
+                    console.log('1');
+                } else {
+                    e.preventDefault();
+                }
+            })
         })
     </script>
 @endsection

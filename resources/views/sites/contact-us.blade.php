@@ -15,7 +15,7 @@
                         <h1 class="page-title" itemprop="headline">Contact Us</h1>
                         <div class="entry-content" itemprop="text">
                             <p>Address: 812 N Columbia Blvd #233 Portland, OR 97217 United States<br />
-                                Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e2d2b2e2e312c2a1e39313f2a2d2a3b3b703d3133">[email&#160;protected]</a><br />
+                                Email: support@goatstee.com <br/>
                                 Phone: 2006283979</p>
                             <div role="form" class="wpcf7" id="wpcf7-f41-p34-o1" lang="en-US" dir="ltr">
                                 <div class="screen-reader-response"></div>

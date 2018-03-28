@@ -19,6 +19,11 @@ class CreateProductSizeTable extends Migration
             $table->string('size');
 
             $table->timestamps();
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

@@ -36,42 +36,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                @foreach($users as $user)
                                 <tr>
-                                    <td>1</td>
-                                    <td>minhnv</td>
-                                    <td>20-03-2018 15:08</td>
+                                    <td>{{$user->id}}</td>
+                                    <td>{{$user->first_name . ' ' . $user->last_name}}</td>
+                                    <td>{{$user->created_at}}</td>
                                     <td>
                                         <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>dungdv</td>
-                                    <td>20-03-2018 15:08</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>minh1101@gmail.com</td>
-                                    <td>20-03-2018 15:08</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>minhnv1</td>
-                                    <td>20-03-2018 15:08</td>
-                                    <td>
-                                        <a href="#" class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></a>
-                                        <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                             <div class="loading"></div>

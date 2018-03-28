@@ -19,6 +19,12 @@ class CreateProductColorTable extends Migration
             $table->string('color_name');
 
             $table->timestamps();
+
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
