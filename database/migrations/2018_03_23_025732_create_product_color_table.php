@@ -17,7 +17,8 @@ class CreateProductColorTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('product_id');
             $table->string('color_name');
-
+            $table->string('sex')->default('')->nullable();
+            $table->string('imglink')->default('')->nullable();
             $table->timestamps();
 
             $table->foreign('product_id')

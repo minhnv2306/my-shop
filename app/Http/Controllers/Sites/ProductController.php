@@ -14,8 +14,13 @@ class ProductController extends Controller
 {
     public function show(Product $product)
     {
-        $colors = Product_color::where('product_id', $product->id)->get(['color_name']);
-        $sizes = Product_size::where('product_id', $product->id)->get(['size']);
+        $colors = Product_color::where([
+                ['product_id', $product->id],
+                ['sex', 'Men']
+            ])
+            ->get(['color_name']);
+//        $sizes = Product_size::where('product_id', $product->id)->get(['size']);
+        $sizes = Product::getSize();
         $reviews = Review::getReviews($product->id, null, 1);
 
         if (Auth::check()) {
@@ -29,6 +34,19 @@ class ProductController extends Controller
             'sizes' => $sizes,
             'reviews' => $reviews,
             'reviews_waiting' => $reviews_waiting,
+        ]);
+    }
+    public function getColor(Request $request)
+    {
+        $product_id = $request->product_id;
+        $sex = $request->sex == 1 ? 'Men' : 'Women';
+        $colors = Product_color::where([
+            ['product_id', $product_id],
+            ['sex', $sex]
+        ])->get();
+
+        return view('sites.product.color', [
+            'colors' => $colors
         ]);
     }
 }

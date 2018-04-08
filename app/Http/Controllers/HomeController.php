@@ -7,9 +7,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests;
-use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Product_color;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class HomeController

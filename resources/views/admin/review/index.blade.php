@@ -66,18 +66,18 @@
                                                                 <input type="text" class="form-control" id="usr" disabled value="{{$review->product->name}}">
                                                             </div>
                                                             <div class="form-group">
-                                                                <img src="{{getLinkImage($review->product->avatar)}}" width="20%">
+                                                                <img src="{{($review->product->avatar)}}" width="20%">
                                                                 @if (!empty($review->product->image_1))
-                                                                    <img src="{{getLinkImage($review->product->image_1)}}" width="20%">
+                                                                    <img src="{{($review->product->image_1)}}" width="20%">
                                                                 @endif
                                                                 @if (!empty($review->product->image_2))
-                                                                    <img src="{{getLinkImage($review->product->image_2)}}" width="20%">
+                                                                    <img src="{{($review->product->image_2)}}" width="20%">
                                                                 @endif
                                                                 @if (!empty($review->product->image_3))
-                                                                    <img src="{{getLinkImage($review->product->image_3)}}" width="20%">
+                                                                    <img src="{{($review->product->image_3)}}" width="20%">
                                                                 @endif
                                                                 @if (!empty($review->product->image_4))
-                                                                    <img src="{{getLinkImage($review->product->image_4)}}" width="20%">
+                                                                    <img src="{{($review->product->image_4)}}" width="20%">
                                                                 @endif
 
                                                             </div>

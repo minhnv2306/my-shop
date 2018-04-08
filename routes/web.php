@@ -66,6 +66,8 @@ Route::group([ 'namespace' => 'Sites'], function()
         Route::get('account-detail', 'UserController@showAccount')->name('user.detail-user');
         Route::post('saveUser', 'UserController@saveAccount')->name('user.save-account');
     });
+
+    Route::get('getColor/{product_id}/{sex}', 'ProductController@getColor');
 });
 Route::group([ 'namespace' => 'Admin', 'prefix' => 'admin'], function()
 {
@@ -78,6 +80,8 @@ Route::group([ 'namespace' => 'Admin', 'prefix' => 'admin'], function()
         Route::resource('reviews', 'ReviewController');
         Route::get('/approved/{review_id}' , 'ReviewController@approved')->name('reviews.approved');
         Route::get('/hide/{review_id}' , 'ReviewController@hide')->name('reviews.hide');
+
+        Route::post('create-product', 'ProductController@createProductByFile')->name('create-product');
     });
     Route::post('/login', 'UserController@login')->name('admin.login');
 });

@@ -35,7 +35,7 @@
 
                         <td class="product-thumbnail">
                             <a href="{{route('sites.products.show', ['product' => $product_cart->product_id])}}">                                <!-- Featured Image From URL plugin -->
-                                <img src="{{getLinkImage($product_cart->product->avatar)}}"
+                                <img src="{{($product_cart->product->avatar)}}"
                                      alt="I Am A Taurus Woman Funny T Shirt"></img></a></td>
 
                         <td class="product-name" data-title="Product">

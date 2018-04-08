@@ -17,7 +17,7 @@
                                     <li class="post-2779250 product type-product status-publish has-post-thumbnail yith-wishlist entry first instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $products[0]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($products[0]->avatar)}}"
+                                            <img src="{{$products[0]->avatar}}"
                                                  alt="I Am A Taurus Woman Funny T Shirt"></img>
                                             <h3>{{$products[0]->name}}</h3>
 
@@ -35,7 +35,7 @@
                                     <li class="post-2779088 product type-product status-publish has-post-thumbnail yith-wishlist entry  instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $products[1]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($products[1]->avatar)}}"></img>
+                                            <img src="{{$products[1]->avatar}}"></img>
                                             <h3>{{$products[1]->name}}</h3>
 
                                             <span class="price"><span class="woocommerce-Price-amount amount"><span
@@ -52,7 +52,7 @@
                                     <li class="post-2778926 product type-product status-publish has-post-thumbnail yith-wishlist entry  instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $products[2]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($products[2]->avatar)}}"></img>
+                                            <img src="{{$products[2]->avatar}}"></img>
                                             <h3>{{$products[2]->name}}</h3>
 
                                             <span class="price"><span class="woocommerce-Price-amount amount"><span
@@ -71,7 +71,7 @@
                                     <li class="post-2779007 product type-product status-publish has-post-thumbnail yith-wishlist entry last instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $products[3]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($products[3]->avatar)}}"></img>
+                                            <img src="{{($products[3]->avatar)}}"></img>
                                             <h3>{{$products[3]->name}}</h3>
 
                                             <span class="price"><span class="woocommerce-Price-amount amount"><span
@@ -100,7 +100,7 @@
                                     <li class="post-2693694 product type-product status-publish has-post-thumbnail yith-wishlist entry first instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $sale_products[0]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($sale_products[0]->avatar)}}"
+                                            <img src="{{($sale_products[0]->avatar)}}"
                                                  alt="Total Solar Eclipse Summer August 21st 2017 T Shirt"></img>
                                             <h3>{{$sale_products[0]->name}}</h3>
 
@@ -119,7 +119,7 @@
                                     <li class="post-2293410 product type-product status-publish has-post-thumbnail yith-wishlist entry  instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $sale_products[1]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($sale_products[1]->avatar)}}"
+                                            <img src="{{($sale_products[1]->avatar)}}"
                                                  alt="Catholics Vs Convicts On Back 1988 Classic T Shirt"></img>
                                             <h3>{{$sale_products[1]->name}}</h3>
 
@@ -138,7 +138,7 @@
                                     <li class="post-952080 product type-product status-publish has-post-thumbnail yith-wishlist entry  instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $sale_products[2]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($sale_products[2]->avatar)}}"
+                                            <img src="{{($sale_products[2]->avatar)}}"
                                                  alt="Donald J Trump President Inauguration Day 2017 T-shirt"></img>
                                             <h3>{{$sale_products[2]->name}}</h3>
 
@@ -157,7 +157,7 @@
                                     <li class="post-76717 product type-product status-publish has-post-thumbnail yith-wishlist entry last instock taxable shipping-taxable purchasable product-type-variable has-children">
                                         <a href="{{route('sites.products.show', ['product' => $sale_products[3]->id])}}"
                                            class="woocommerce-LoopProduct-link"><!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($sale_products[3]->avatar)}}"
+                                            <img src="{{($sale_products[3]->avatar)}}"
                                                  alt="S-mi-le t shirt Mo-re Roman-Atwood - T Shirt"></img>
                                             <h3>{{$sale_products[3]->name}}</h3>
 

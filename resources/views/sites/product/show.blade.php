@@ -617,46 +617,46 @@
                              class="post-2779088 product type-product status-publish has-post-thumbnail yith-wishlist entry first instock taxable shipping-taxable purchasable product-type-variable has-children">
 
                             <div class="images">
-                                <a href="{{getLinkImage($product->avatar)}}"
+                                <a href="{{$product->avatar}}"
                                    itemprop="image" class="woocommerce-main-image zoom"
                                    title="Armed Forces Day Honor Their Sacrifice Military T-shirt"
                                    data-rel="prettyPhoto[product-gallery]"><!-- Featured Image From URL plugin -->
-                                    <img src="{{getLinkImage($product->avatar)}}"
+                                    <img src="{{$product->avatar}}"
                                          alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"/>
                                 </a>
                                 <div class="thumbnails columns-4">
                                     @if(!empty($product->image_1))
-                                        <a href='{{getLinkImage($product->image_1)}}'
+                                        <a href='{{($product->image_1)}}'
                                            class='zoom' title='Armed Forces Day Honor Their Sacrifice Military T-shirt'
                                            data-rel=prettyPhoto[product-gallery]>
                                             <!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($product->image_1)}}"
+                                            <img src="{{($product->image_1)}}"
                                                  alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"></img>
                                         </a>
                                     @endif
                                     @if(!empty($product->image_2))
-                                        <a href='{{getLinkImage($product->image_2)}}'
+                                        <a href='{{($product->image_2)}}'
                                            class='zoom' title='Armed Forces Day Honor Their Sacrifice Military T-shirt'
                                            data-rel=prettyPhoto[product-gallery]>
                                             <!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($product->image_2)}}"
+                                            <img src="{{($product->image_2)}}"
                                                  alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"></img></a>
                                     @endif
                                     @if(!empty($product->image_3))
 
-                                        <a href='{{getLinkImage($product->image_3)}}'
+                                        <a href='{{($product->image_3)}}'
                                            class='zoom' title='Armed Forces Day Honor Their Sacrifice Military T-shirt'
                                            data-rel=prettyPhoto[product-gallery]>
                                             <!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($product->image_3)}}"
+                                            <img src="{{($product->image_3)}}"
                                                  alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"></img></a>
                                     @endif
                                     @if(!empty($product->image_4))
-                                        <a href='{{getLinkImage($product->image_4)}}'
+                                        <a href='{{($product->image_4)}}'
                                            class='zoom' title='Armed Forces Day Honor Their Sacrifice Military T-shirt'
                                            data-rel=prettyPhoto[product-gallery]>
                                             <!-- Featured Image From URL plugin -->
-                                            <img src="{{getLinkImage($product->image_4)}}"
+                                            <img src="{{($product->image_4)}}"
                                                  alt="Armed Forces Day Honor Their Sacrifice Military T-shirt"></img>
                                         </a>
                                     @endif
@@ -676,13 +676,25 @@
                                 ]) !!}
                                     <table class="variations" cellspacing="0">
                                         <tbody>
-                                        <tr>
-                                            <td class="label"><label for="color">Color</label></td>
+                                        <tr id="fit_type_choose">
+                                            <td class="label"><label for="fit-type">Fit Type</label></td>
                                             <td class="value">
+                                                <select id="fit-type" class="" name="fit_type"
+                                                        data-attribute_name="fit_type"
+                                                        data-show_option_none="yes" style="min-width: 200px">
+                                                    <option value="men" selected='selected'>Men</option>
+                                                    <option value="women">Women</option>
+                                                </select>
+                                            </td>
+                                            <input type="hidden" value="{{$product->id}}" id="product_id"/>
+                                            <input type="hidden" value="{{$product->price}}" id="price"/>
+                                        </tr>
+                                        <tr id="color_choose">
+                                            <td class="label"><label for="color">Color</label></td>
+                                            <td class="value" id="color_product">
                                                 <select id="color" class="" name="attribute_color"
                                                         data-attribute_name="attribute_color"
-                                                        data-show_option_none="yes">
-                                                    <option value="">Choose an option</option>
+                                                        data-show_option_none="yes" style="min-width: 200px">
                                                     @foreach($colors as $color)
                                                         <option value="{{$color->color_name}}">{{$color->color_name}}</option>
                                                     @endforeach
@@ -693,25 +705,11 @@
                                             <td class="value">
                                                 <select id="size" class="" name="attribute_size"
                                                         data-attribute_name="attribute_size"
-                                                data-show_option_none="yes">
-                                                <option value="">Choose an option</option>
+                                                data-show_option_none="yes" style="min-width: 200px">
                                                 @foreach($sizes as $size)
-                                                    <option value="{{$size->size}}">{{$size->size}}</option>
+                                                    <option value="{{$size}}">{{$size}}</option>
                                                     @endforeach
                                                     </select>                        </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="label"><label for="fit-type">Fit Type</label></td>
-                                            <td class="value">
-                                                <select id="fit-type" class="" name="fit_type"
-                                                        data-attribute_name="fit_type"
-                                                data-show_option_none="yes">
-                                                <option value="">Choose an option</option>
-                                                <option value="men" selected='selected'>Men</option>
-                                                <option value="women">Women</option>
-                                                </select>
-                                            </td>
-                                            <input type="hidden" value="{{$product->price}}" id="price">
                                         </tr>
                                         <tr>
                                             <td class="label">
@@ -816,26 +814,7 @@
                                             </h2>
                                             <p></a></div>
                                     <div>
-                                        <li>{{$product->cotton}} Cotton</li>
-                                        <li>{{$product->made}}</li>
-                                        @if(!empty($product->machine))
-                                            <li>{{$product->machine}}</li>
-                                        @endif
-                                        @if(!empty($product->note_1))
-                                            <li>
-                                                {{$product->note_1}}
-                                            </li>
-                                        @endif
-                                        @if(!empty($product->note_2))
-                                            <li>
-                                                {{$product->note_2}}
-                                            </li>
-                                        @endif
-                                        @if(!empty($product->note_3))
-                                            <li>
-                                                {{$product->note_3}}
-                                            </li>
-                                        @endif
+                                        {!! $product->description !!}
                                     </div>
                                 </div>
                                 <div class="woocommerce-Tabs-panel woocommerce-Tabs-panel--additional_information panel entry-content wc-tab"
@@ -861,7 +840,7 @@
                                             <td>
                                                 <p>
                                                     @foreach($sizes as $size)
-                                                        {{$size->size . ', '}}
+                                                        {{$size . ', '}}
                                                     @endforeach
                                                 </p>
                                             </td>
@@ -1194,6 +1173,8 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
 <script type='text/javascript'
         src='//goatstee.com/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart-variation.min.js?ver=2.6.7'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Creating-Loading-Overlay-with-CSS3-Animations-waitMe/waitMe.js"></script>
+<link rel="stylesheet" href="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Creating-Loading-Overlay-with-CSS3-Animations-waitMe/waitMe.css">
 <script>
     $(document).ready(function () {
         if (!localStorage.getItem("hash")) {
@@ -1236,6 +1217,27 @@ Không thể liên kết thẻ tiếp thị lại với thông tin nhận dạng
                 alert("Please choose fit type of product!");
                 e.preventDefault();
             }
+        })
+        $('#fit_type_choose').change(function () {
+            var product_id = $('#product_id').val();
+            var sex = $('#fit-type').val()=='men' ? 1 : 2;
+
+            $.ajax({
+                url: '/getColor/' + product_id + '/' + sex,
+                type: 'GET',
+                beforeSend: function () {
+                    $('#color_choose').waitMe({
+                        effect : 'bounce',
+                        text : '',
+                        bg : 'rgba(255,255,255,0.7)',
+                        color : '#000'
+                    });
+                },
+                success: function (data, status) {
+                    $('#color_choose').waitMe('hide');
+                    $('#color_product').html(data);
+                }
+            })
         })
     })
 </script>

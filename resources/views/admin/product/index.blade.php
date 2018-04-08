@@ -29,7 +29,7 @@
                                 <thead>
                                 <tr>
                                     <th>{{trans('product.table.id')}}</th>
-                                    <th>{{trans('product.table.name')}}</th>
+                                    <th style="width: 150px">{{trans('product.table.name')}}</th>
                                     <th>{{trans('product.table.avatar')}}</th>
                                     <th>{{trans('product.table.price')}}</th>
                                     <th>{{trans('product.table.image')}}</th>
@@ -44,14 +44,14 @@
                                         <td>{{$product->id}}</td>
                                         <td>{{$product->name}}</td>
                                         <td>
-                                            <img src="{{getLinkImage($product->avatar)}}" width="120px" height="120px">
+                                            <img src="{{($product->avatar)}}" width="120px" height="120px">
                                         </td>
                                         <td>{{$product->price}}</td>
                                         <td>
                                             @for($i = 1; $i < 5; $i++)
                                                 <?php $index = 'image_' . $i; ?>
                                                 @if(!empty($product[$index]))
-                                                    <img src="{{getLinkImage($product[$index])}}" width="120px"
+                                                    <img src="{{($product[$index])}}" width="120px"
                                                          height="120px">
                                                 @endif
                                             @endfor

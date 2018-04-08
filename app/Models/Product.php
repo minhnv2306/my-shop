@@ -57,6 +57,7 @@ class Product extends Model
             '17' => 'Heather Blue',
             '18' => 'Dark Heather',
             '19' => 'Orange',
+            '20' => 'Heather'
         );
     }
     public static function getDetailColor($key)

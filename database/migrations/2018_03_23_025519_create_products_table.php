@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('name')->default('');
             $table->unsignedInteger('price')->default(0);
             $table->unsignedInteger('sale_number')->default(0);
+            $table->text('description')->nullable();
             $table->string('cotton')->default('');
             $table->string('made')->default('');
             $table->string('avatar')->default('');
